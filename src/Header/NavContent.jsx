@@ -1,18 +1,32 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const NavContent = (props) => {
-  const { children } = props;
-  return <SNavContent>{children}</SNavContent>;
+  const { to, children } = props;
+  return (
+    <SNavContent>
+      <SLink to={to}>{children}</SLink>
+    </SNavContent>
+  );
 };
 
 const SNavContent = styled.li`
   margin-left: 30px;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 100px;
   font-family: 'Scheherazade New', serif;
   font-style: italic;
+  transition-property: transform;
+  transition-duration: 0.3s;
   :hover {
     cursor: pointer;
-    color: #7acbe1;
+    color: #c9c6c6;
+    transform: translateX(10px);
   }
+`;
+
+const SLink = styled(Link)`
+  width: 30px;
+  height: 30px;
+  color: #b6b0b0;
 `;

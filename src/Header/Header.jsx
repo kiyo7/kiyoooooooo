@@ -12,20 +12,19 @@ export const Header = () => {
           <img src={logo} alt="logo" />
         </div>
         <SNav>
-          <NavContent>HOME</NavContent>
-          <NavContent>ABOUT</NavContent>
-          <NavContent>CONTACT</NavContent>
+          <NavContent to="/">HOME</NavContent>
+          <NavContent to="/about">ABOUT</NavContent>
+          <NavContent to="/contact">CONTACT</NavContent>
         </SNav>
       </SHeader>
     </>
   );
 };
+
 const SHeader = styled.header`
-  height: 100px;
   display: flex;
   justify-content: space-between;
-  max-width: 1100px;
-  margin: 10px 4% 0;
+  padding: 10px 4% 0;
 `;
 
 const SNav = styled.nav`

@@ -11,8 +11,8 @@ export const Footer = () => {
 };
 
 const SCopyRight = styled.footer`
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   color: #fff;
   text-align: center;
   background-color: #dcd7d7;
