@@ -3,17 +3,15 @@ import styled from 'styled-components';
 export const Footer = () => {
   return (
     <SCopyRight>
-      <p>
-        <small>&copy; 2021 kiyo </small>
-      </p>
+      <p>&copy; 2021 kiyo</p>
     </SCopyRight>
   );
 };
 
 const SCopyRight = styled.footer`
-  height: 40px;
-  line-height: 40px;
-  color: #fff;
+  height: 100px;
+  line-height: 100px;
+  color: #4b4b4b;
   text-align: center;
-  background-color: #dcd7d7;
+  background-color: #d3d3d3;
 `;
