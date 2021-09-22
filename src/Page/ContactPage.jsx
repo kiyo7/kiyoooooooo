@@ -1,5 +1,9 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 export const ContactPage = () => {
-  return <></>;
+  return (
+    <>
+      <h1>contactpage</h1>
+    </>
+  );
 };

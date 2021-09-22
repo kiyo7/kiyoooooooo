@@ -1,5 +1,9 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 export const AboutPage = () => {
-  return <></>;
+  return (
+    <>
+      <h1>aboutpage</h1>
+    </>
+  );
 };
