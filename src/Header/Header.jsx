@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import logo from '../images/logo.png';
 
-import { NavContent } from './NavContent';
+import { LinkTag } from '../route/LinkTag';
 
 export const Header = () => {
   return (
@@ -12,9 +12,9 @@ export const Header = () => {
           <img src={logo} alt="logo" />
         </div>
         <SNav>
-          <NavContent to="/">HOME</NavContent>
-          <NavContent to="/about">ABOUT</NavContent>
-          <NavContent to="/contact">CONTACT</NavContent>
+          <LinkTag to="/">HOME</LinkTag>
+          <LinkTag to="/about">ABOUT</LinkTag>
+          <LinkTag to="/contact">CONTACT</LinkTag>
         </SNav>
       </SHeader>
     </>

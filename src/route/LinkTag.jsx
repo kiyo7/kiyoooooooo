@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const NavContent = (props) => {
-  const { to, children } = props;
+export const LinkTag = (props) => {
+  const { to, children = '' } = props;
+
   return (
     <SNavContent>
       <SLink to={to}>{children}</SLink>
     </SNavContent>
   );
 };
-
-const SNavContent = styled.li`
+const SNavContent = styled.div`
   margin-left: 20px;
   font-size: 3rem;
   line-height: 100px;
