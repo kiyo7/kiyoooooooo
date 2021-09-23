@@ -11,7 +11,7 @@ export const NavContent = (props) => {
 };
 
 const SNavContent = styled.li`
-  margin-left: 30px;
+  margin-left: 20px;
   font-size: 3rem;
   line-height: 100px;
   font-family: 'Scheherazade New', serif;
@@ -26,7 +26,5 @@ const SNavContent = styled.li`
 `;
 
 const SLink = styled(Link)`
-  width: 30px;
-  height: 30px;
   color: #b6b0b0;
 `;
