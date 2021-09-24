@@ -39,6 +39,7 @@ const SWelcome = styled.h2`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+
   font-family: serif;
   ${media.desktop`  font-size: 8rem;`}
   ${media.tablet`  font-size: 5rem;`}
@@ -50,12 +51,12 @@ const SWelcome = styled.h2`
 `;
 
 const SMainTitle = styled(SWelcome)`
-  transform: rotate(0deg);
+  transform: rotate(4deg);
   margin-top: 1rem;
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
-  ${media.desktop`  font-size: 10rem;`}
-  ${media.tablet`  font-size: 6.5rem;`}
-  ${media.phone`  font-size: 3.75rem;`}
+  ${media.desktop`font-size: 10rem;`}
+  ${media.tablet`font-size: 6.5rem;`}
+  ${media.phone`font-size: 3.75rem;`}
   :hover {
     opacity: 0.5;
     cursor: pointer;

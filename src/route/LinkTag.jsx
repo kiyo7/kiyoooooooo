@@ -16,11 +16,12 @@ const SNavContent = styled.div`
   margin-left: 20px;
   font-size: 3rem;
   line-height: 100px;
-  font-family: 'Scheherazade New', serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-style: italic;
   transition-property: transform;
   transition-duration: 0.3s;
   ${media.tablet`font-size: 1.7rem; margin-top: 0px`}
+  ${media.phone`font-size: 1.3rem;`}
   :hover {
     cursor: pointer;
     color: #c9c6c6;

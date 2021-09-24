@@ -46,6 +46,6 @@ const SButton = styled(Button)`
   ${media.tablet`  font-size: 1.75rem;
     width: 100px;
   height: 80px;`}
-  ${media.phone`  font-size: 1rem;  width: 60px;
-  height: 60px;`}
+  ${media.phone`  font-size: 1rem;  width: 50px;
+  height: 50px;`}
 `;
