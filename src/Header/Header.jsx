@@ -1,21 +1,23 @@
 import styled from 'styled-components';
 
-import logo from '../images/logo.png';
-
 import { LinkTag } from '../route/LinkTag';
+import { LogoLink } from '../route/LogoLink';
+import { Humbugger } from './Humbugger';
+
+import { media } from '../util/MediaQuery';
 
 export const Header = () => {
   return (
     <>
       <SHeader>
-        <div>
-          <img src={logo} alt="logo" />
-        </div>
+        <LogoLink />
         <SNav>
-          <LinkTag to="/">HOME</LinkTag>
           <LinkTag to="/about">ABOUT</LinkTag>
           <LinkTag to="/contact">CONTACT</LinkTag>
         </SNav>
+        <SHumbuggerWrapper>
+          <Humbugger />
+        </SHumbuggerWrapper>
       </SHeader>
     </>
   );
@@ -24,10 +26,16 @@ export const Header = () => {
 const SHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 10px 4% 0;
+  padding: 4% 4% 0;
 `;
 
 const SNav = styled.nav`
   display: flex;
   list-style: none;
+  ${media.tablet`  display:none`}
+`;
+
+const SHumbuggerWrapper = styled.div`
+  ${media.desktop`  display:none`}
+  ${media.tablet`  display:static`}
 `;

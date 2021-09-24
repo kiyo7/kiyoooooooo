@@ -35,7 +35,8 @@ function App() {
 
 const SAllWrapper = styled.div`
   background-image: url(${back});
-  max-width: 100%;
+  width: 100vw;
+
   background-size: cover;
 `;
 
