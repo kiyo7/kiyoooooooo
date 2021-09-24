@@ -14,7 +14,7 @@ export const LinkTag = (props) => {
 };
 const SNavContent = styled.div`
   margin-left: 20px;
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 100px;
   font-family: 'Josefin Sans', sans-serif;
   font-style: italic;

@@ -9,10 +9,12 @@ export const Footer = () => {
 };
 
 const SCopyRight = styled.footer`
-  height: 10%;
-  line-height: 100px;
-  color: white;
+  width: 100%;
   text-align: center;
-  font-size: 20px;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 0.875rem;
   background-color: #d3d3d3;
 `;

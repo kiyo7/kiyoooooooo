@@ -21,9 +21,8 @@ export const MainPage = () => {
 };
 
 const SWrapper = styled.main`
-  height: 87vh;
-  margin-top: 4%;
-  ${media.tablet`  margin-top: 15%;`}
+  margin-top: 3%;
+  ${media.tablet`  margin-top: 5%;`}
   ${media.phone`  margin-top: 20%;`}
 `;
 const STitleWrapper = styled.div`
@@ -41,9 +40,9 @@ const SWelcome = styled.h2`
   color: transparent;
 
   font-family: serif;
-  ${media.desktop`  font-size: 8rem;`}
-  ${media.tablet`  font-size: 5rem;`}
-  ${media.phone`  font-size: 2.825rem;`}
+  ${media.desktop`  font-size: 5rem;`}
+  ${media.tablet`  font-size: 3rem;`}
+  ${media.phone`  font-size: 2.5rem;`}
 
   :hover {
     opacity: 0.5;
@@ -54,9 +53,9 @@ const SMainTitle = styled(SWelcome)`
   transform: rotate(4deg);
   margin-top: 1rem;
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
-  ${media.desktop`font-size: 10rem;`}
-  ${media.tablet`font-size: 6.5rem;`}
-  ${media.phone`font-size: 3.75rem;`}
+  ${media.desktop`font-size: 6rem;`}
+  ${media.tablet`font-size: 4.5rem;`}
+  ${media.phone`font-size: 3.5rem;`}
   :hover {
     opacity: 0.5;
     cursor: pointer;

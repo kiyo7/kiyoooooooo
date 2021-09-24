@@ -43,9 +43,9 @@ const SButton = styled(Button)`
   :hover {
     opacity: 0.9;
   }
-  ${media.tablet`  font-size: 1.75rem;
-    width: 100px;
-  height: 80px;`}
-  ${media.phone`  font-size: 1rem;  width: 50px;
+  ${media.tablet`  font-size: 1.3rem;
+    width: 70px;
+  height: 70px;`}
+  ${media.phone`  font-size: 0.825rem;  width: 50px;
   height: 50px;`}
 `;

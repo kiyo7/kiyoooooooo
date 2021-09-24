@@ -36,6 +36,11 @@ function App() {
 const SAllWrapper = styled.div`
   background-image: url(${back});
   width: 100vw;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  min-height: 100vh;
+
   background-size: cover;
 `;
 
