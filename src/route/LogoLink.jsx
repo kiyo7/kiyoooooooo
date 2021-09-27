@@ -6,7 +6,7 @@ import logo from '../images/logo.png';
 
 export const LogoLink = () => {
   return (
-    <Link to="/">
+    <Link to="/kiyoooooooo">
       <SLogo src={logo} alt="logo" />
     </Link>
   );

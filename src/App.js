@@ -17,7 +17,7 @@ function App() {
       <SAllWrapper>
         <Header />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/kiyoooooooo">
             <MainPage />
           </Route>
           <Route path="/about">
@@ -40,7 +40,6 @@ const SAllWrapper = styled.div`
   padding-bottom: 60px;
   box-sizing: border-box;
   min-height: 100vh;
-
   background-size: cover;
 `;
 

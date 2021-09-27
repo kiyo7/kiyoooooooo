@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { AboutPage } from '../Page/AboutPage';
+
 import { media } from '../util/MediaQuery';
 
 export const MainPage = () => {
@@ -7,7 +9,7 @@ export const MainPage = () => {
     <>
       <SWrapper>
         <STitleWrapper>
-          <SWelcome>Welcome!!</SWelcome>
+          <SWelcome>Welcome to</SWelcome>
           <br />
           <SMainTitle>
             <SSpan>Ki</SSpan>yo's
@@ -16,6 +18,7 @@ export const MainPage = () => {
           </SMainTitle>
         </STitleWrapper>
       </SWrapper>
+      <AboutPage></AboutPage>
     </>
   );
 };
@@ -34,6 +37,8 @@ const SWelcome = styled.h2`
   display: inline-block;
   font-weight: bold;
   margin: 0;
+  transform: rotate(-1deg);
+
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
   background-clip: text;
   -webkit-background-clip: text;

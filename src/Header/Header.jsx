@@ -12,8 +12,8 @@ export const Header = () => {
       <SHeader>
         <LogoLink />
         <SNav>
-          <LinkTag to="/about">ABOUT</LinkTag>
-          <LinkTag to="/contact">CONTACT</LinkTag>
+          <LinkTag to="/about">About</LinkTag>
+          <LinkTag to="/contact">Contact</LinkTag>
         </SNav>
         <SHumbuggerWrapper>
           <Humbugger />
@@ -26,7 +26,7 @@ export const Header = () => {
 const SHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 4% 4% 0;
+  padding: 0.5% 4% 0;
 `;
 
 const SNav = styled.nav`

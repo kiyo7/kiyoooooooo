@@ -23,10 +23,11 @@ export const Humbugger = () => {
       <SButton onClick={showDrawer}>
         <AlignLeftOutlined />
       </SButton>
-      <Drawer placement="right" onClose={onClose} visible={visible} width="60%">
-        <LinkTag to="/about">ABOUT</LinkTag>
-        <Divider dashed />
-        <LinkTag to="/contact">CONTACT</LinkTag>
+      <Drawer placement="right" onClose={onClose} visible={visible} width="30%">
+        <LinkTag to="/about">About</LinkTag>
+        <Divider />
+        <LinkTag to="/contact">Contact</LinkTag>
+        <Divider />
       </Drawer>
     </>
   );
