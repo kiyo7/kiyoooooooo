@@ -1,5 +1,6 @@
+//lib
 import styled from 'styled-components';
-
+//functions
 import { icons } from './skill';
 
 export const SkillIcon = () => {
@@ -20,6 +21,6 @@ const SIconWrapper = styled.div`
 
 const SIcon = styled.img`
   width: 100%;
-  margin: 0 20px;
-  opacity: 0.8;
+  margin: 0 20%;
+  opacity: 0.75;
 `;

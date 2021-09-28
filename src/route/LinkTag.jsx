@@ -25,7 +25,7 @@ const SNavContent = styled.div`
   :hover {
     cursor: pointer;
     color: #c9c6c6;
-    transform: translateX(-10px);
+    transform: translateX(-20px);
   }
 `;
 

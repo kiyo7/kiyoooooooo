@@ -2,12 +2,12 @@
 import styled from 'styled-components';
 //function
 import { media } from '../util/MediaQuery';
-
 import { SkillIcon } from '../Introduction/SkillIcon';
 
 //font-awesome
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 //images
 import image from '../images/image.jpeg';
 
@@ -15,15 +15,19 @@ export const AboutPage = () => {
   return (
     <>
       <SAboutPage>
-        <STitle>ABOUT </STitle>
+        <STitle>ABOUT</STitle>
         <SAboutWrapper>
           <SArticle>
             <SImageWrapper>
               <SMyImage src={image} alt="img" />
             </SImageWrapper>
             <SSNSWrapper>
-              <SSNSIcon icon={faGithub} size="5x" />
-              <SSNSIcon icon={faTwitter} size="5x" />
+              <SALink href="https://github.com/kiyo7">
+                <SSNSIcon icon={faGithub} size="5x" />
+              </SALink>
+              <SALink href="https://twitter.com/home?lang=ja">
+                <SSNSIcon icon={faTwitter} size="5x" />
+              </SALink>
             </SSNSWrapper>
           </SArticle>
           <SAside>
@@ -97,14 +101,14 @@ const STitle = styled.h1`
   font-family: 'Josefin Sans', sans-serif;
 
   ${media.tablet`font-size: 2rem;`}
-  ${media.phone`font-size: 1.5rem; margin-top: 3rem;`} /* :before {
+  ${media.phone`font-size: 1.5rem; margin-top: 3rem;`} :before {
     content: '';
     position: absolute;
     width: 50px;
     height: 2px;
     background-color: #898a8a;
     left: 37%;
-    top: 20%;
+    top: 55%;
     ${media.tablet`display:none;`}
   }
   :after {
@@ -114,9 +118,9 @@ const STitle = styled.h1`
     height: 2px;
     background-color: #898a8a;
     right: 37%;
-    top: 20%;
+    top: 55%;
     ${media.tablet`display:none;`}
-  } */
+  }
 `;
 
 const SAboutWrapper = styled.div`
@@ -148,8 +152,11 @@ const SSNSWrapper = styled.div`
   display: flex;
 `;
 
+const SALink = styled.a`
+  margin: 10% auto;
+`;
+
 const SSNSIcon = styled(FontAwesomeIcon)`
-  margin: 20% auto;
   color: #605a57;
   :hover {
     cursor: pointer;

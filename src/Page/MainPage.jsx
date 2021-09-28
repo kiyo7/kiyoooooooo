@@ -1,7 +1,10 @@
-import styled from 'styled-components';
+//lib
+import styled, { keyframes } from 'styled-components';
 
+//components
 import { AboutPage } from '../Page/AboutPage';
 
+//functions
 import { media } from '../util/MediaQuery';
 
 export const MainPage = () => {
@@ -18,19 +21,29 @@ export const MainPage = () => {
           </SMainTitle>
         </STitleWrapper>
       </SWrapper>
-      <AboutPage></AboutPage>
+      <AboutPage />
     </>
   );
 };
 
+const Trans = keyframes`
+from {
+  opacity:0;
+};
+to {
+  opacity:1;
+
+}`;
+
 const SWrapper = styled.main`
   margin-top: 3%;
+  min-height: 100vh;
   ${media.tablet`  margin-top: 5%;`}
-  ${media.phone`  margin-top: 20%;`}
+  ${media.phone`  margin-top: 20%;`};
 `;
 const STitleWrapper = styled.div`
   width: 80%;
-  margin: 0 auto;
+  margin: 0 20%;
 `;
 
 const SWelcome = styled.h2`
@@ -43,9 +56,10 @@ const SWelcome = styled.h2`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-
   font-family: serif;
-  ${media.desktop`  font-size: 5rem;`}
+  animation: ${Trans} 5s linear;
+
+  ${media.desktop`  font-size: 5.2rem;`}
   ${media.tablet`  font-size: 3rem;`}
   ${media.phone`  font-size: 2.5rem;`}
 
@@ -58,7 +72,7 @@ const SMainTitle = styled(SWelcome)`
   transform: rotate(4deg);
   margin-top: 1rem;
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
-  ${media.desktop`font-size: 6rem;`}
+  ${media.desktop`font-size: 6.2rem;`}
   ${media.tablet`font-size: 4.5rem;`}
   ${media.phone`font-size: 3.5rem;`}
   :hover {

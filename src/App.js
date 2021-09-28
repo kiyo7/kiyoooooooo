@@ -1,14 +1,18 @@
+//style
 import './App.css';
 
-import styled from 'styled-components';
+//lib
+import styled, { keyframes } from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+//components
 import { Header } from './Header/Header';
 import { MainPage } from './Page/MainPage';
 import { AboutPage } from './Page/AboutPage';
 import { ContactPage } from './Page/ContactPage';
 import { Footer } from './Footer/Footer';
 
+//images
 import back from './images/back.jpeg';
 
 function App() {
@@ -20,9 +24,6 @@ function App() {
           <Route exact path="/kiyoooooooo">
             <MainPage />
           </Route>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
           <Route path="/contact">
             <ContactPage />
           </Route>
@@ -32,6 +33,13 @@ function App() {
     </Router>
   );
 }
+const Screen = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}`;
 
 const SAllWrapper = styled.div`
   background-image: url(${back});
@@ -41,6 +49,8 @@ const SAllWrapper = styled.div`
   box-sizing: border-box;
   min-height: 100vh;
   background-size: cover;
+
+  animation: ${Screen} 2s linear;
 `;
 
 export default App;

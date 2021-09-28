@@ -1,6 +1,7 @@
+//lib
 import { useState } from 'react';
 import styled from 'styled-components';
-
+//functions
 import { media } from '../util/MediaQuery';
 
 export const ContactPage = () => {
@@ -18,23 +19,28 @@ export const ContactPage = () => {
             <SLabel htmlFor="name">
               名前<SRed>※</SRed>
             </SLabel>
-            <SInput type="text" />
+            <SInput type="text" placeholder="例) 田中 太郎" />
           </SContactBox>
           <SContactBox>
             <SLabel htmlFor="name">
               メールアドレス<SRed>※</SRed>
             </SLabel>
-            <SInput type="text" />
+            <SInput type="text" placeholder="例) xxxxxxxxxxx@gmail.com" />
           </SContactBox>
           <SContactBox>
             <SLabel htmlFor="name">タイトル</SLabel>
-            <SInput type="text" />
+            <SInput type="text" placeholder="例) サイトの感想" />
           </SContactBox>
           <SContactBox>
             <SLabel htmlFor="name">
               メッセージ<SRed>※</SRed>
             </SLabel>
-            <STextArea name="message" cols="30" rows="10" />
+            <STextArea
+              name="message"
+              cols="30"
+              rows="10"
+              placeholder="メッセージ欄です。ご自由に!"
+            />
           </SContactBox>
         </form>
         <SButtonWrapper>
@@ -57,6 +63,26 @@ const STitle = styled.h1`
   margin: 0;
   ${media.tablet`font-size: 2rem;`}
   ${media.phone`font-size: 1.5rem; margin-top: 3rem;`}
+  :before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: #898a8a;
+    left: 36%;
+    top: 18%;
+    ${media.tablet`display:none;`}
+  }
+  :after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: #898a8a;
+    right: 36%;
+    top: 18%;
+    ${media.tablet`display:none;`}
+  }
 `;
 
 const SContactWrapper = styled.div`
@@ -89,6 +115,9 @@ const SInput = styled.input`
   border-radius: 8px;
   ${media.tablet` font-size: 0.75rem;`}
   ${media.phone` font-size: 0.75rem;`}
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
 `;
 
 const STextArea = styled.textarea`
@@ -99,7 +128,10 @@ const STextArea = styled.textarea`
   border-radius: 8px;
   height: 6rem;
   ${media.tablet`height: 5rem; font-size: 0.75rem;`}
-  ${media.phone`height: 3rem; font-size: 0.5rem;`}
+  ${media.phone`height: 3rem; font-size: 0.5rem;`} 
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
 `;
 
 const SButtonWrapper = styled.div`
@@ -112,7 +144,7 @@ const SSubmitButton = styled.input`
   border: none;
   cursor: pointer;
   line-height: 1;
-  padding: 8px 0;
+  padding: 15px 0;
   color: #fff;
   background: #0bd;
   border-radius: 8px;

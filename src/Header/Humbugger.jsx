@@ -1,11 +1,14 @@
+//lib
 import { useState } from 'react';
 import { Drawer, Button, Divider } from 'antd';
 import { AlignLeftOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
+import 'antd/dist/antd.css';
 
+//components
 import { LinkTag } from '../route/LinkTag';
 
-import 'antd/dist/antd.css';
+//functions
 import { media } from '../util/MediaQuery';
 
 export const Humbugger = () => {
@@ -24,8 +27,6 @@ export const Humbugger = () => {
         <AlignLeftOutlined />
       </SButton>
       <Drawer placement="right" onClose={onClose} visible={visible} width="30%">
-        <LinkTag to="/about">About</LinkTag>
-        <Divider />
         <LinkTag to="/contact">Contact</LinkTag>
         <Divider />
       </Drawer>
@@ -43,6 +44,7 @@ const SButton = styled(Button)`
   border-radius: 25px;
   :hover {
     opacity: 0.9;
+    color: #bab7b7;
   }
   ${media.tablet`  font-size: 1.3rem;
     width: 70px;
