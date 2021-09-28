@@ -1,8 +1,9 @@
 //lib
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 //function
 import { media } from '../util/MediaQuery';
-import { SkillIcon } from '../Introduction/SkillIcon';
+//components
+import { Introduction } from '../Introduction/Introduction';
 
 //font-awesome
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -31,38 +32,7 @@ export const AboutPage = () => {
             </SSNSWrapper>
           </SArticle>
           <SAside>
-            <SContentsWrapper>
-              <SIntroWrapper>
-                <Desc>
-                  [Name]
-                  <SSelfIntroduction>清川 &emsp; 尚</SSelfIntroduction>
-                </Desc>
-              </SIntroWrapper>
-              <SIntroWrapper>
-                <Desc>
-                  [Age and Birthday]
-                  <SSelfIntroduction>
-                    20歳 &emsp; [2001/03/24]
-                  </SSelfIntroduction>
-                </Desc>
-              </SIntroWrapper>
-              <SIntroWrapper>
-                <Desc>
-                  [Hobby]
-                  <SSelfIntroduction>
-                    ガジェット集め ネットサーフィン ダーツ 音楽を聴く
-                  </SSelfIntroduction>
-                </Desc>
-              </SIntroWrapper>
-              <SIntroWrapper>
-                <Desc>
-                  [Skill]
-                  <SSelfIntroduction>
-                    <SkillIcon />
-                  </SSelfIntroduction>
-                </Desc>
-              </SIntroWrapper>
-            </SContentsWrapper>
+            <Introduction />
           </SAside>
         </SAboutWrapper>
       </SAboutPage>
@@ -70,24 +40,13 @@ export const AboutPage = () => {
   );
 };
 
-const Desc = styled.p`
-  position: relative;
-  text-align: left;
-  font-size: 1rem;
-  color: #898a8a;
-  font-family: 'Josefin Sans', sans-serif;
-  margin: 2% 0;
-
-  :after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 90%;
-    height: 3px;
-    background-color: #d5d5d5;
-  }
-`;
-
+const Roop = keyframes`
+0% {
+  transform: perspective(400px) rotate3d(1,1,0,0deg)
+}
+ 100% {
+  transform: perspective(400px) rotate3d(1,1,5,360deg)
+ }`;
 const SAboutPage = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -101,12 +60,14 @@ const STitle = styled.h1`
   font-family: 'Josefin Sans', sans-serif;
 
   ${media.tablet`font-size: 2rem;`}
-  ${media.phone`font-size: 1.5rem; margin-top: 3rem;`} :before {
+  ${media.phone`font-size: 1.5rem; margin-top: 3rem;`} 
+  :before {
     content: '';
     position: absolute;
-    width: 50px;
+    width: 70px;
     height: 2px;
     background-color: #898a8a;
+    animation: ${Roop} 3s infinite;
     left: 37%;
     top: 55%;
     ${media.tablet`display:none;`}
@@ -114,8 +75,9 @@ const STitle = styled.h1`
   :after {
     content: '';
     position: absolute;
-    width: 50px;
+    width: 70px;
     height: 2px;
+    animation: ${Roop} 3s infinite;
     background-color: #898a8a;
     right: 37%;
     top: 55%;
@@ -168,27 +130,8 @@ const SSNSIcon = styled(FontAwesomeIcon)`
 
 //*****************************Aside********************************* */
 
-const SContentsWrapper = styled.div`
-  width: 100%;
-  margin: 0 auto;
-`;
-const SIntroWrapper = styled.div`
-  margin-bottom: 4%;
-`;
-
 const SAside = styled.aside`
   width: 56%;
-`;
-
-const SSelfIntroduction = styled(Desc)`
-  text-align: center;
-  font-size: 1.15rem;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: #747373;
-  :after {
-    content: none;
-  }
 `;
 
 //**************************************************************** */

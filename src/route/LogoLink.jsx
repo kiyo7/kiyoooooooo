@@ -17,14 +17,17 @@ export const LogoLink = () => {
 };
 
 const LogoSpin = keyframes`
-from {
-  transform: rotate(15deg)
-}
-to {
-  transform: rotate(-15deg);
-}`;
+0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }`;
 
 const SLogo = styled.img`
-  animation: ${LogoSpin} 2.5s infinite linear alternate;
+  animation: ${LogoSpin} 2.5s infinite ease-in-out alternate;
   ${media.phone`width: 60%;`};
 `;

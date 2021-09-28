@@ -12,7 +12,17 @@ export const MainPage = () => {
     <>
       <SWrapper>
         <STitleWrapper>
-          <SWelcome>Welcome to</SWelcome>
+          <SWelcome>
+            <span>W</span>
+            <span>e</span>
+            <span>l</span>
+            <span>c</span>
+            <span>m</span>
+            <span>e</span>
+            <span> </span>
+            <span>t</span>
+            <span>o</span>
+          </SWelcome>
           <br />
           <SMainTitle>
             <SSpan>Ki</SSpan>yo's
@@ -25,6 +35,8 @@ export const MainPage = () => {
     </>
   );
 };
+
+const SFeed = styled.span``;
 
 const Trans = keyframes`
 from {
