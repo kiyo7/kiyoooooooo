@@ -7,8 +7,8 @@ export const SkillIcon = () => {
   return (
     <>
       <SIconWrapper>
-        {icons.map((icon) => {
-          return <SIcon src={icon} alt="icon" />;
+        {icons.map((icon, key) => {
+          return <SIcon key={key} src={icon} alt="icon" />;
         })}
       </SIconWrapper>
     </>

@@ -1,14 +1,30 @@
 //lib
-import { useState } from 'react';
+import { useReducer } from 'react';
 import styled from 'styled-components';
 //functions
 import { media } from '../util/MediaQuery';
 
+const initialState = { name: '', email: '', title: '', message: '' };
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'name':
+      return { ...state, name: action.payload };
+    case 'email':
+      return { ...state, email: action.payload };
+    case 'title':
+      return { ...state, title: action.payload };
+    case 'message':
+      return { ...state, message: action.payload };
+    default:
+      throw new Error();
+  }
+};
+
 export const ContactPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [title, setTitle] = useState('');
-  const [message, setMessage] = useState('');
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const submit = () => {};
 
   return (
     <SContact>
@@ -19,32 +35,56 @@ export const ContactPage = () => {
             <SLabel htmlFor="name">
               名前<SRed>※</SRed>
             </SLabel>
-            <SInput type="text" placeholder="例) 田中 太郎" />
+            <SInput
+              id="name"
+              type="text"
+              placeholder="例) 田中 太郎"
+              onChange={(e) => {
+                dispatch({ type: 'name', payload: e.target.value });
+              }}
+            />
           </SContactBox>
           <SContactBox>
-            <SLabel htmlFor="name">
+            <SLabel htmlFor="email">
               メールアドレス<SRed>※</SRed>
             </SLabel>
-            <SInput type="text" placeholder="例) xxxxxxxxxxx@gmail.com" />
+            <SInput
+              id="email"
+              type="text"
+              placeholder="例) xxxxxxxxxxx@gmail.com"
+              onChange={(e) => {
+                dispatch({ type: 'email', payload: e.target.value });
+              }}
+            />
           </SContactBox>
           <SContactBox>
-            <SLabel htmlFor="name">タイトル</SLabel>
-            <SInput type="text" placeholder="例) サイトの感想" />
+            <SLabel htmlFor="title">タイトル</SLabel>
+            <SInput
+              id="title"
+              type="text"
+              placeholder="例) サイトの感想"
+              onChange={(e) => {
+                dispatch({ type: 'title', payload: e.target.value });
+              }}
+            />
           </SContactBox>
           <SContactBox>
-            <SLabel htmlFor="name">
+            <SLabel htmlFor="message">
               メッセージ<SRed>※</SRed>
             </SLabel>
             <STextArea
-              name="message"
+              id="message"
               cols="30"
               rows="10"
               placeholder="メッセージ欄です。ご自由に!"
+              onChange={(e) => {
+                dispatch({ type: 'message', payload: e.target.value });
+              }}
             />
           </SContactBox>
         </form>
         <SButtonWrapper>
-          <SSubmitButton type="button" value="送信" />
+          <SSubmitButton onClick={() => submit()} type="button" value="送信" />
         </SButtonWrapper>
       </SContactWrapper>
     </SContact>

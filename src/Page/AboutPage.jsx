@@ -10,7 +10,7 @@ import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //images
-import image from '../images/image.jpeg';
+import nekonu from '../images/nekonu.png';
 
 export const AboutPage = () => {
   return (
@@ -20,7 +20,7 @@ export const AboutPage = () => {
         <SAboutWrapper>
           <SArticle>
             <SImageWrapper>
-              <SMyImage src={image} alt="img" />
+              <SMyImage src={nekonu} alt="img" />
             </SImageWrapper>
             <SSNSWrapper>
               <SALink href="https://github.com/kiyo7">

@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //components
 import { Header } from './Header/Header';
 import { MainPage } from './Page/MainPage';
-import { AboutPage } from './Page/AboutPage';
 import { ContactPage } from './Page/ContactPage';
 import { Footer } from './Footer/Footer';
 

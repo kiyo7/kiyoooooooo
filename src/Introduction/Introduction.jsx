@@ -1,5 +1,5 @@
 //lib
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 //components
 import { SkillIcon } from '../Introduction/SkillIcon';
 
@@ -21,9 +21,9 @@ const my = [
 export const Introduction = () => {
   return (
     <SIntroWrapper>
-      {my.map((m) => {
+      {my.map((m, key) => {
         return (
-          <SIntroWrapper>
+          <SIntroWrapper key={key}>
             <Desc>
               {m.question}
               <SSelfIntroduction>{m.answer}</SSelfIntroduction>

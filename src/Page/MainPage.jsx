@@ -12,17 +12,7 @@ export const MainPage = () => {
     <>
       <SWrapper>
         <STitleWrapper>
-          <SWelcome>
-            <span>W</span>
-            <span>e</span>
-            <span>l</span>
-            <span>c</span>
-            <span>m</span>
-            <span>e</span>
-            <span> </span>
-            <span>t</span>
-            <span>o</span>
-          </SWelcome>
+          <SWelcome>Welcome to</SWelcome>
           <br />
           <SMainTitle>
             <SSpan>Ki</SSpan>yo's
@@ -35,8 +25,6 @@ export const MainPage = () => {
     </>
   );
 };
-
-const SFeed = styled.span``;
 
 const Trans = keyframes`
 from {
@@ -51,8 +39,9 @@ const SWrapper = styled.main`
   margin-top: 3%;
   min-height: 100vh;
   ${media.tablet`  margin-top: 5%;`}
-  ${media.phone`  margin-top: 20%;`};
+  ${media.phone`  margin-top: 33%;`};
 `;
+
 const STitleWrapper = styled.div`
   width: 80%;
   margin: 0 20%;
@@ -72,8 +61,8 @@ const SWelcome = styled.h2`
   animation: ${Trans} 5s linear;
 
   ${media.desktop`  font-size: 5.2rem;`}
-  ${media.tablet`  font-size: 3rem;`}
-  ${media.phone`  font-size: 2.5rem;`}
+  ${media.tablet`  font-size: 4rem;`}
+  ${media.phone`  font-size: 3.5rem;`}
 
   :hover {
     opacity: 0.5;
@@ -85,8 +74,8 @@ const SMainTitle = styled(SWelcome)`
   margin-top: 1rem;
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
   ${media.desktop`font-size: 6.2rem;`}
-  ${media.tablet`font-size: 4.5rem;`}
-  ${media.phone`font-size: 3.5rem;`}
+  ${media.tablet`font-size: 5.5rem;`}
+  ${media.phone`font-size: 4.5rem;`}
   :hover {
     opacity: 0.5;
     cursor: pointer;

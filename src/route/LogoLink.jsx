@@ -21,7 +21,7 @@ const LogoSpin = keyframes`
     transform:translate(0, 0) rotate(-7deg);
   }
   50% {
-    transform:translate(0, -7px) rotate(0deg);
+    transform:translate(0, -10px) rotate(0deg);
   }
   100% {
     transform:translate(0, 0) rotate(7deg);

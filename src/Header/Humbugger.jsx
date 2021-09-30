@@ -26,7 +26,9 @@ export const Humbugger = () => {
       <SButton onClick={showDrawer}>
         <AlignLeftOutlined />
       </SButton>
-      <Drawer placement="right" onClose={onClose} visible={visible} width="30%">
+      <Drawer placement="right" onClose={onClose} visible={visible} width="50%">
+        <LinkTag to="/">Top</LinkTag>
+        <Divider />
         <LinkTag to="/contact">Contact</LinkTag>
         <Divider />
       </Drawer>
