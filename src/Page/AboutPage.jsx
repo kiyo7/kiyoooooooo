@@ -1,9 +1,12 @@
 //lib
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+
 //function
 import { media } from '../util/MediaQuery';
+
 //components
 import { Introduction } from '../Introduction/Introduction';
+import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 
 //font-awesome
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -12,24 +15,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //images
 import nekonu from '../images/nekonu.png';
 
+//animation
+import { Roup } from '../util/animation';
+
 export const AboutPage = () => {
   return (
     <>
       <SAboutPage>
-        <STitle>ABOUT</STitle>
+        <STitle>About</STitle>
         <SAboutWrapper>
           <SArticle>
-            <SImageWrapper>
-              <SMyImage src={nekonu} alt="img" />
-            </SImageWrapper>
-            <SSNSWrapper>
-              <SALink href="https://github.com/kiyo7">
-                <SSNSIcon icon={faGithub} size="5x" />
-              </SALink>
-              <SALink href="https://twitter.com/home?lang=ja">
-                <SSNSIcon icon={faTwitter} size="5x" />
-              </SALink>
-            </SSNSWrapper>
+            <ScrollRevealContainer move="top">
+              <SImageWrapper>
+                <SMyImage src={nekonu} alt="img" />
+              </SImageWrapper>
+            </ScrollRevealContainer>
+            <ScrollRevealContainer move="down">
+              <SSNSWrapper>
+                <SIconWithName>
+                  <a href="https://github.com/kiyo7">
+                    <SSNSIcon icon={faGithub} size="5x" />
+                  </a>
+                  <p>Github</p>
+                </SIconWithName>
+                <SIconWithName>
+                  <a href="https://twitter.com/home?lang=ja">
+                    <SSNSIcon icon={faTwitter} size="5x" />
+                  </a>
+                  <p>Twitter</p>
+                </SIconWithName>
+              </SSNSWrapper>
+            </ScrollRevealContainer>
           </SArticle>
           <SAside>
             <Introduction />
@@ -40,13 +56,6 @@ export const AboutPage = () => {
   );
 };
 
-const Roop = keyframes`
-0% {
-  transform: perspective(400px) rotate3d(1,1,0,0deg)
-}
- 100% {
-  transform: perspective(400px) rotate3d(1,1,5,360deg)
- }`;
 const SAboutPage = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -54,34 +63,37 @@ const SAboutPage = styled.div`
 `;
 
 const STitle = styled.h1`
-  font-size: 2.75rem;
+  font-size: 3.5rem;
   color: #898a8a;
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
 
-  ${media.tablet`font-size: 2rem;`}
+  ${media.tablet`font-size: 4rem;`}
   ${media.phone`font-size: 1.5rem; margin-top: 3rem;`} 
   :before {
     content: '';
     position: absolute;
-    width: 70px;
-    height: 2px;
+    width: 60px;
+    height: 3px;
     background-color: #898a8a;
-    animation: ${Roop} 3s infinite;
-    left: 37%;
+    animation: ${Roup} 3s infinite;
+    left: 35%;
     top: 55%;
-    ${media.tablet`display:none;`}
+    ${media.tablet`top:55%; left: 23%;`}
+    ${media.phone`top:53%; left: 23%; width: 40px;`}
   }
   :after {
     content: '';
     position: absolute;
-    width: 70px;
-    height: 2px;
-    animation: ${Roop} 3s infinite;
+    width: 60px;
+    height: 3px;
+    animation: ${Roup} 3s infinite;
     background-color: #898a8a;
-    right: 37%;
+    right: 35%;
     top: 55%;
-    ${media.tablet`display:none;`}
+
+    ${media.tablet`top:55%; right: 23%;`}
+    ${media.phone`top:53%; right: 23%; width: 40px;`}
   }
 `;
 
@@ -89,33 +101,37 @@ const SAboutWrapper = styled.div`
   width: 100%;
   display: flex;
   margin-top: 2rem;
+  align-items: center;
+  ${media.tablet`flex-direction: column`};
 `;
 
 //*****************************Article********************************* */
 const SArticle = styled.article`
   width: 40%;
   text-align: center;
+  ${media.tablet`width: 60%;`}
 `;
 
 const SImageWrapper = styled.div`
   width: 80%;
+  ${media.tablet`width: 100%;`}
 `;
 
 const SMyImage = styled.img`
   width: 72%;
   border-radius: 50%;
 `;
-//**************************************************************** */
 
 //*****************************Sns********************************* */
 
 const SSNSWrapper = styled.div`
   width: 80%;
   display: flex;
+  ${media.tablet`width: 100%;`}
 `;
 
-const SALink = styled.a`
-  margin: 10% auto;
+const SIconWithName = styled.div`
+  margin: 0 auto;
 `;
 
 const SSNSIcon = styled(FontAwesomeIcon)`
@@ -126,12 +142,9 @@ const SSNSIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-//**************************************************************** */
-
 //*****************************Aside********************************* */
 
 const SAside = styled.aside`
   width: 56%;
+  ${media.tablet`width: 80%;`}
 `;
-
-//**************************************************************** */

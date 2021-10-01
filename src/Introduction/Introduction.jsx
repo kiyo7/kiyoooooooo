@@ -1,43 +1,54 @@
 //lib
 import styled from 'styled-components';
+
+//function
+import { media } from '../util/MediaQuery';
+
 //components
 import { SkillIcon } from '../Introduction/SkillIcon';
+import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 
 const my = [
   {
     question: '[Name]',
-    answer: '清川  尚',
+    answer: '清川  尚 / Hisashi Kiyokawa',
+    delay: '0s',
   },
   {
     question: '[Age and Birthday]',
     answer: '20歳       [2001/03/24]',
+    delay: '0.5s',
   },
   {
     question: '[Hobby]',
-    answer: 'ガジェット好き ネットサーフィン ダーツ 音楽を聴く',
+    answer:
+      'ガジェット好き ネットサーフィン ダーツ 音楽を聴く バスケ 猫と戯れる ',
+    delay: '1s',
   },
 ];
 
 export const Introduction = () => {
   return (
-    <SIntroWrapper>
-      {my.map((m, key) => {
-        return (
-          <SIntroWrapper key={key}>
-            <Desc>
-              {m.question}
-              <SSelfIntroduction>{m.answer}</SSelfIntroduction>
-            </Desc>
-          </SIntroWrapper>
-        );
-      })}
-      <Desc>
-        [Skill]
-        <SSelfIntroduction>
-          <SkillIcon />
-        </SSelfIntroduction>
-      </Desc>
-    </SIntroWrapper>
+    <ScrollRevealContainer move="left">
+      <div>
+        {my.map((m, key) => {
+          return (
+            <SIntroWrapper key={key}>
+              <Desc>
+                {m.question}
+                <SSelfIntroduction>{m.answer}</SSelfIntroduction>
+              </Desc>
+            </SIntroWrapper>
+          );
+        })}
+        <Desc>
+          [Skill]
+          <SSelfIntroduction>
+            <SkillIcon />
+          </SSelfIntroduction>
+        </Desc>
+      </div>
+    </ScrollRevealContainer>
   );
 };
 
@@ -53,21 +64,23 @@ const Desc = styled.p`
     content: '';
     display: block;
     position: absolute;
-    width: 90%;
+    width: 100%;
     height: 3px;
     background-color: #d5d5d5;
   }
 `;
+
 const SIntroWrapper = styled.div`
   margin-bottom: 4%;
 `;
+
 const SSelfIntroduction = styled(Desc)`
   text-align: center;
   font-size: 1.15rem;
   font-weight: bold;
   font-family: sans-serif;
+  letter-spacing: 0.3rem;
   color: #747373;
-
   :after {
     content: none;
   }

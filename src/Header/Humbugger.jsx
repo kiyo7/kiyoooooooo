@@ -27,7 +27,7 @@ export const Humbugger = () => {
         <AlignLeftOutlined />
       </SButton>
       <Drawer placement="right" onClose={onClose} visible={visible} width="50%">
-        <LinkTag to="/">Top</LinkTag>
+        <LinkTag to="/kiyoooooooo">Top</LinkTag>
         <Divider />
         <LinkTag to="/contact">Contact</LinkTag>
         <Divider />
@@ -38,12 +38,13 @@ export const Humbugger = () => {
 
 const SButton = styled(Button)`
   position: fixed;
-  top: 4%;
+  top: 6%;
   right: 6.725%;
   color: white;
   background-color: #3a3a3a;
   border: 0;
   border-radius: 25px;
+  z-index: 1;
   :hover {
     opacity: 0.9;
     color: #bab7b7;

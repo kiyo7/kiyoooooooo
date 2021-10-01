@@ -1,5 +1,5 @@
 //lib
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 //components
 import { LinkTag } from '../route/LinkTag';
@@ -9,12 +9,16 @@ import { Humbugger } from './Humbugger';
 //functions
 import { media } from '../util/MediaQuery';
 
+//animation
+import { Slide } from '../util/animation';
+
 export const Header = () => {
   return (
     <>
       <SHeader>
         <LogoLink />
         <SNav>
+          <LinkTag to="/kiyoooooooo">Top</LinkTag>
           <LinkTag to="/contact">Contact</LinkTag>
         </SNav>
         <SHumbuggerWrapper>
@@ -25,20 +29,10 @@ export const Header = () => {
   );
 };
 
-const Slide = keyframes`
-from {
- transform: translateX(200px);
- opacity: 0;
-}
-to {
-  transform: translateX(0px)
-  opacity: 1;
-}`;
-
 const SHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 1% 4% 0;
+  padding: 5% 4% 0;
 `;
 
 const SNav = styled.nav`

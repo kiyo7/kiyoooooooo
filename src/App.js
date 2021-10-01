@@ -2,7 +2,7 @@
 import './App.css';
 
 //lib
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //components
@@ -13,6 +13,9 @@ import { Footer } from './Footer/Footer';
 
 //images
 import back from './images/back.jpeg';
+
+//animation
+import { Screen } from './util/animation';
 
 function App() {
   return (
@@ -32,13 +35,6 @@ function App() {
     </Router>
   );
 }
-const Screen = keyframes`
-from {
-  opacity: 0;
-}
-to {
-  opacity: 1;
-}`;
 
 const SAllWrapper = styled.div`
   background-image: url(${back});
