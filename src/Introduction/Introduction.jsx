@@ -16,7 +16,7 @@ const my = [
   },
   {
     question: '[Age and Birthday]',
-    answer: '20歳       [2001/03/24]',
+    answer: '20歳 [2001/03/24]',
     delay: '0.5s',
   },
   {
@@ -72,6 +72,7 @@ const Desc = styled.p`
 
 const SIntroWrapper = styled.div`
   margin-bottom: 4%;
+  ${media.phone`margin-bottom: 6%;`}
 `;
 
 const SSelfIntroduction = styled(Desc)`
@@ -80,6 +81,8 @@ const SSelfIntroduction = styled(Desc)`
   font-weight: bold;
   font-family: sans-serif;
   letter-spacing: 0.3rem;
+  ${media.phone`letter-spacing: 0.08rem;`}
+
   color: #747373;
   :after {
     content: none;

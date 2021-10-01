@@ -73,26 +73,26 @@ const STitle = styled.h1`
   :before {
     content: '';
     position: absolute;
-    width: 60px;
+    width: 3rem;
     height: 3px;
     background-color: #898a8a;
     animation: ${Roup} 3s infinite;
-    left: 35%;
-    top: 55%;
-    ${media.tablet`top:55%; left: 23%;`}
+    left: 32%;
+    top: 53%;
+    ${media.tablet`top:48%; left: 23%;`}
     ${media.phone`top:53%; left: 23%; width: 40px;`}
   }
   :after {
     content: '';
     position: absolute;
-    width: 60px;
+    width: 3rem;
     height: 3px;
     animation: ${Roup} 3s infinite;
     background-color: #898a8a;
-    right: 35%;
-    top: 55%;
+    right: 32%;
+    top: 53%;
 
-    ${media.tablet`top:55%; right: 23%;`}
+    ${media.tablet`top:48%; right: 23%;`}
     ${media.phone`top:53%; right: 23%; width: 40px;`}
   }
 `;

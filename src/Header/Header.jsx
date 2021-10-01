@@ -18,7 +18,7 @@ export const Header = () => {
       <SHeader>
         <LogoLink />
         <SNav>
-          <LinkTag to="/kiyoooooooo">Top</LinkTag>
+          <LinkTag to="/kiyoooooooo">Home</LinkTag>
           <LinkTag to="/contact">Contact</LinkTag>
         </SNav>
         <SHumbuggerWrapper>

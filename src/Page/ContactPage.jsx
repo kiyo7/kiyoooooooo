@@ -58,7 +58,7 @@ export const ContactPage = () => {
             />
           </SContactBox>
           <SContactBox>
-            <SLabel htmlFor="title">タイトル</SLabel>
+            <SLabel htmlFor="title">タイトル(任意)</SLabel>
             <SInput
               id="title"
               type="text"
@@ -102,8 +102,7 @@ const STitle = styled.h1`
   font-family: 'Josefin Sans', sans-serif;
   margin: 0;
   ${media.tablet`font-size: 2rem;`}
-  ${media.phone`font-size: 1.5rem; margin-top: 3rem;`}
-  :before {
+  ${media.phone`font-size: 2.5rem; margin-top: 3rem;`} /* :before {
     content: '';
     position: absolute;
     width: 50px;
@@ -122,12 +121,13 @@ const STitle = styled.h1`
     right: 36%;
     top: 18%;
     ${media.tablet`display:none;`}
-  }
+  } */
 `;
 
 const SContactWrapper = styled.div`
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
+  min-height: 100vh;
 `;
 
 const SContactBox = styled.div`
@@ -137,7 +137,7 @@ const SContactBox = styled.div`
 `;
 
 const SLabel = styled.label`
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #615c5c;
   ${media.tablet`font-size: 0.8rem;`}
   ${media.phone`font-size: 0.5rem;`}
@@ -167,8 +167,8 @@ const STextArea = styled.textarea`
   border: 3px solid #fff;
   border-radius: 8px;
   height: 6rem;
-  ${media.tablet`height: 5rem; font-size: 0.75rem;`}
-  ${media.phone`height: 3rem; font-size: 0.5rem;`} 
+  ${media.tablet`height: 6rem;`}
+  ${media.phone`height: 5rem; font-size: 0.75rem;`} 
   &:focus::-webkit-input-placeholder {
     color: transparent;
   }
@@ -180,7 +180,7 @@ const SButtonWrapper = styled.div`
 `;
 
 const SSubmitButton = styled.input`
-  width: 50%;
+  width: 60%;
   border: none;
   cursor: pointer;
   line-height: 1;
@@ -190,8 +190,8 @@ const SSubmitButton = styled.input`
   border-radius: 8px;
   font-size: 0.9rem;
   margin-bottom: 1rem;
-  ${media.tablet`font-size: 0.7rem; padding: 10px `}
-  ${media.phone`font-size: 1rem; padding: 6px `}
+  ${media.tablet`font-size: 1rem; padding: 10px `}
+  ${media.phone`font-size: 1rem; padding: 8px `}
   :hover {
     background: #0090aa;
   }

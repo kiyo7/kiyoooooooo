@@ -34,7 +34,7 @@ export const MainPage = () => {
 
 const SWrapper = styled.main`
   min-height: 85vh;
-  ${media.tablet`  margin-top: 20%;`}
+  ${media.tablet`  margin-top: 10%;`}
   ${media.phone`  margin-top: 30%;`};
 `;
 
