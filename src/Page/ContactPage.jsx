@@ -42,6 +42,7 @@ export const ContactPage = () => {
     e.preventDefault();
     console.log('push submit');
     sendEmail();
+    alert('お問い合わせを送信しました');
   };
 
   const disableSend =

@@ -23,7 +23,7 @@ function App() {
       <SAllWrapper>
         <Header />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/kiyoooooooo">
             <MainPage />
           </Route>
           <Route path="/contact">
