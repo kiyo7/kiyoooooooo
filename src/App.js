@@ -5,13 +5,13 @@ import './App.css';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-//components
+//component
 import { Header } from './Header/Header';
 import { MainPage } from './Page/MainPage';
 import { ContactPage } from './Page/ContactPage';
 import { Footer } from './Footer/Footer';
 
-//images
+//image
 import back from './images/back.jpeg';
 
 //animation
@@ -23,7 +23,7 @@ function App() {
       <SAllWrapper>
         <Header />
         <Switch>
-          <Route exact path="/kiyoooooooo">
+          <Route exact path="/">
             <MainPage />
           </Route>
           <Route path="/contact">

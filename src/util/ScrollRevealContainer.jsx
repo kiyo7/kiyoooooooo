@@ -1,3 +1,4 @@
+//lib
 import { useRef, useEffect } from 'react';
 import scrollReveal from 'scrollreveal';
 
@@ -11,7 +12,6 @@ export const ScrollRevealContainer = ({ children, move }) => {
         reset: true,
         delay: 700,
         opacity: 0,
-        reset: false,
         origin:
           move === 'left'
             ? 'left'
@@ -24,5 +24,5 @@ export const ScrollRevealContainer = ({ children, move }) => {
       });
   }, [sectionRef, move]);
 
-  return <section ref={sectionRef}>{children}</section>;
+  return <div ref={sectionRef}>{children}</div>;
 };

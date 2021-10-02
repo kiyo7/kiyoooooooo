@@ -1,11 +1,11 @@
 //lib
 import styled from 'styled-components';
 
-//components
+//component
 import { AboutPage } from '../Page/AboutPage';
 import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 
-//functions
+//function
 import { media } from '../util/MediaQuery';
 
 //animation
@@ -33,7 +33,7 @@ export const MainPage = () => {
 };
 
 const SWrapper = styled.main`
-  min-height: 85vh;
+  min-height: 100vh;
   ${media.tablet`  margin-top: 10%;`}
   ${media.phone`  margin-top: 30%;`};
 `;
@@ -54,10 +54,10 @@ const SWelcome = styled.h2`
   color: transparent;
   font-family: serif;
   animation: ${Trans} 5s linear;
+  font-size: 6rem;
 
-  ${media.desktop`  font-size: 5.2rem;`}
-  ${media.tablet`  font-size: 5rem;`}
-  ${media.phone`  font-size: 2.8rem;`}
+  ${media.tablet`  font-size: 13vw;`}
+  ${media.phone`  font-size: 13vw;`}
 
   :hover {
     opacity: 0.5;
@@ -67,10 +67,10 @@ const SWelcome = styled.h2`
 const SMainTitle = styled(SWelcome)`
   transform: rotate(4deg);
   margin-top: 1rem;
+  font-size: 7rem;
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
-  ${media.desktop`font-size: 6.2rem;`}
-  ${media.tablet`font-size: 6rem;`}
-  ${media.phone`font-size: 4rem;`}
+  ${media.tablet`font-size: 19vw;`}
+  ${media.phone`font-size: 19vw;`}
   :hover {
     opacity: 0.5;
     cursor: pointer;

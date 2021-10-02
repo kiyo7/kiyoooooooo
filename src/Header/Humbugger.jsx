@@ -5,11 +5,15 @@ import { AlignLeftOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import 'antd/dist/antd.css';
 
-//components
+//component
 import { LinkTag } from '../route/LinkTag';
 
-//functions
+//function
 import { media } from '../util/MediaQuery';
+
+//font-awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
 export const Humbugger = () => {
   const [visible, setVisible] = useState(false);
@@ -27,9 +31,15 @@ export const Humbugger = () => {
         <AlignLeftOutlined />
       </SButton>
       <Drawer placement="right" onClose={onClose} visible={visible} width="50%">
-        <LinkTag to="/kiyoooooooo">Home</LinkTag>
+        <LinkTag to="/">
+          <FontAwesomeIcon icon={faHome} />
+          &ensp;Home
+        </LinkTag>
         <Divider />
-        <LinkTag to="/contact">Contact</LinkTag>
+        <LinkTag to="/contact">
+          <FontAwesomeIcon icon={faAddressCard} />
+          &ensp;Contact
+        </LinkTag>
         <Divider />
       </Drawer>
     </>

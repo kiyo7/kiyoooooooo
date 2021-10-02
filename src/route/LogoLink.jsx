@@ -13,7 +13,7 @@ import { LogoSpin } from '../util/animation';
 
 export const LogoLink = () => {
   return (
-    <Link to="/kiyoooooooo">
+    <Link to="/">
       <SLogo src={logo} alt="logo" />
     </Link>
   );

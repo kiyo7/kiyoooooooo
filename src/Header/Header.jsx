@@ -1,12 +1,12 @@
 //lib
 import styled from 'styled-components';
 
-//components
+//component
 import { LinkTag } from '../route/LinkTag';
 import { LogoLink } from '../route/LogoLink';
 import { Humbugger } from './Humbugger';
 
-//functions
+//function
 import { media } from '../util/MediaQuery';
 
 //animation
@@ -18,7 +18,7 @@ export const Header = () => {
       <SHeader>
         <LogoLink />
         <SNav>
-          <LinkTag to="/kiyoooooooo">Home</LinkTag>
+          <LinkTag to="/">Home</LinkTag>
           <LinkTag to="/contact">Contact</LinkTag>
         </SNav>
         <SHumbuggerWrapper>

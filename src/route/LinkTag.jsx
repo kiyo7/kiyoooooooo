@@ -1,5 +1,7 @@
+//lib
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+//function
 
 import { media } from '../util/MediaQuery';
 
@@ -13,7 +15,7 @@ export const LinkTag = (props) => {
   );
 };
 const SNavContent = styled.div`
-  margin-left: 20px;
+  margin-left: 50px;
   font-size: 2rem;
   line-height: 100px;
   font-family: 'Josefin Sans', sans-serif;

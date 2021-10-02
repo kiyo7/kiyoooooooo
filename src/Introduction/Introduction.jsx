@@ -4,7 +4,7 @@ import styled from 'styled-components';
 //function
 import { media } from '../util/MediaQuery';
 
-//components
+//component
 import { SkillIcon } from '../Introduction/SkillIcon';
 import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 
@@ -30,24 +30,22 @@ const my = [
 export const Introduction = () => {
   return (
     <ScrollRevealContainer move="left">
-      <div>
-        {my.map((m, key) => {
-          return (
-            <SIntroWrapper key={key}>
-              <Desc>
-                {m.question}
-                <SSelfIntroduction>{m.answer}</SSelfIntroduction>
-              </Desc>
-            </SIntroWrapper>
-          );
-        })}
-        <Desc>
+      {my.map((m, key) => {
+        return (
+          <SIntroWrapper key={key}>
+            <Desc>{m.question}</Desc>
+            <SSelfIntroduction>{m.answer}</SSelfIntroduction>
+          </SIntroWrapper>
+        );
+      })}
+      <SIntroWrapper>
+        <SSkillIconWrapper>
           [Skill]
-          <SSelfIntroduction>
-            <SkillIcon />
-          </SSelfIntroduction>
-        </Desc>
-      </div>
+          {/* <SSkillIconWrapper> */}
+          <SkillIcon />
+          {/* </SSkillIconWrapper> */}
+        </SSkillIconWrapper>
+      </SIntroWrapper>
     </ScrollRevealContainer>
   );
 };
@@ -58,16 +56,6 @@ const Desc = styled.p`
   font-size: 1rem;
   color: #898a8a;
   font-family: 'Josefin Sans', sans-serif;
-  margin: 2% 0;
-
-  :after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #d5d5d5;
-  }
 `;
 
 const SIntroWrapper = styled.div`
@@ -84,7 +72,25 @@ const SSelfIntroduction = styled(Desc)`
   ${media.phone`letter-spacing: 0.08rem;`}
 
   color: #747373;
+
   :after {
-    content: none;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    margin-top: 1%;
+    background-color: #d5d5d5;
+  }
+`;
+
+const SSkillIconWrapper = styled.div`
+  :after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #d5d5d5;
   }
 `;

@@ -1,3 +1,4 @@
+//lib
 import { keyframes } from 'styled-components';
 
 export const Screen = keyframes`
@@ -17,6 +18,18 @@ export const LogoSpin = keyframes`
   }
   100% {
     transform:translate(0, 0) rotate(10deg);
+  }`;
+
+export const RoupInf = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+
+  }
+  100% {
+    transform: rotate(360deg);
   }`;
 
 export const Slide = keyframes`

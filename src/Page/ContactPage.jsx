@@ -1,34 +1,60 @@
 //lib
 import { useReducer } from 'react';
 import styled from 'styled-components';
-//functions
+import { init, send } from 'emailjs-com';
+//function
 import { media } from '../util/MediaQuery';
 
-const initialState = { name: '', email: '', title: '', message: '' };
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'name':
-      return { ...state, name: action.payload };
-    case 'email':
-      return { ...state, email: action.payload };
-    case 'title':
-      return { ...state, title: action.payload };
-    case 'message':
-      return { ...state, message: action.payload };
-    default:
-      throw new Error();
-  }
-};
+//function
+import { reducer, initialState } from '../reducer/reducer';
 
 export const ContactPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const submit = () => {};
+  const sendEmail = () => {
+    const user_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_USER_ID;
+    const service_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_SERVICE_ID;
+    const template_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_TEMPLATE_ID;
+    if (
+      user_id !== undefined &&
+      service_id !== undefined &&
+      template_id !== undefined
+    ) {
+      init(user_id);
+
+      const template_param = {
+        to_name: state.name,
+        email: state.email,
+        title: state.title,
+        message: state.message,
+      };
+
+      send(service_id, template_id, template_param)
+        .then(() => {
+          console.log('success to send email');
+          dispatch({ type: 'reset' });
+        })
+        .catch((e) => console.log(e));
+    }
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+    console.log('push submit');
+    sendEmail();
+  };
+
+  const disableSend =
+    state.name === '' && state.mail === '' && state.message === '';
 
   return (
     <SContact>
       <STitle>CONTACT</STitle>
+      {/* {disableSend || (
+        <div>
+          <p>必須項目があります</p>
+        </div>
+      )} */}
       <SContactWrapper>
         <form action="submit">
           <SContactBox>
@@ -38,6 +64,7 @@ export const ContactPage = () => {
             <SInput
               id="name"
               type="text"
+              value={state.name}
               placeholder="例) 田中 太郎"
               onChange={(e) => {
                 dispatch({ type: 'name', payload: e.target.value });
@@ -51,6 +78,7 @@ export const ContactPage = () => {
             <SInput
               id="email"
               type="text"
+              value={state.email}
               placeholder="例) xxxxxxxxxxx@gmail.com"
               onChange={(e) => {
                 dispatch({ type: 'email', payload: e.target.value });
@@ -62,6 +90,7 @@ export const ContactPage = () => {
             <SInput
               id="title"
               type="text"
+              value={state.title}
               placeholder="例) サイトの感想"
               onChange={(e) => {
                 dispatch({ type: 'title', payload: e.target.value });
@@ -74,9 +103,10 @@ export const ContactPage = () => {
             </SLabel>
             <STextArea
               id="message"
+              value={state.message}
               cols="30"
               rows="10"
-              placeholder="メッセージ欄です。ご自由に!"
+              placeholder="メッセージ欄です。ご自由にどうぞ!"
               onChange={(e) => {
                 dispatch({ type: 'message', payload: e.target.value });
               }}
@@ -84,7 +114,12 @@ export const ContactPage = () => {
           </SContactBox>
         </form>
         <SButtonWrapper>
-          <SSubmitButton onClick={() => submit()} type="button" value="送信" />
+          <SSubmitButton
+            onClick={(e) => submit(e)}
+            type="button"
+            value="送信"
+            disable={disableSend}
+          />
         </SButtonWrapper>
       </SContactWrapper>
     </SContact>
@@ -101,7 +136,7 @@ const STitle = styled.h1`
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
   margin: 0;
-  ${media.tablet`font-size: 2rem;`}
+  ${media.tablet`font-size: 2rem; margin-top:5rem;`}
   ${media.phone`font-size: 2.5rem; margin-top: 3rem;`} /* :before {
     content: '';
     position: absolute;
@@ -123,6 +158,8 @@ const STitle = styled.h1`
     ${media.tablet`display:none;`}
   } */
 `;
+
+//****************************Form********************************** */
 
 const SContactWrapper = styled.div`
   width: 80%;

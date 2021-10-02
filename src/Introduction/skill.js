@@ -1,4 +1,4 @@
-//images
+//image
 import html from '../images/html-5.svg';
 import css from '../images/css-3.svg';
 import js from '../images/javascript.svg';
