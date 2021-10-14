@@ -1,15 +1,20 @@
 //lib
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import styled from 'styled-components';
 import { init, send } from 'emailjs-com';
+
 //function
 import { media } from '../util/MediaQuery';
 
 //function
 import { reducer, initialState } from '../reducer/reducer';
 
+//components
+import { CheckingModal } from '../modal/CheckingModal';
+
 export const ContactPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [checking, setChecking] = useState(false);
 
   const sendEmail = () => {
     const user_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_USER_ID;
@@ -40,22 +45,17 @@ export const ContactPage = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log('push submit');
+    setChecking(true);
     sendEmail();
-    alert('お問い合わせを送信しました');
   };
 
-  const disableSend =
-    state.name === '' && state.mail === '' && state.message === '';
+  // const disableSend = () => {
+  //   return state.name === '' || state.mail === '' || state.message === '';
+  // };
 
   return (
     <SContact>
       <STitle>CONTACT</STitle>
-      {/* {disableSend || (
-        <div>
-          <p>必須項目があります</p>
-        </div>
-      )} */}
       <SContactWrapper>
         <form action="submit">
           <SContactBox>
@@ -113,13 +113,21 @@ export const ContactPage = () => {
               }}
             />
           </SContactBox>
+          {checking && (
+            <>
+              <CheckingModal
+                checking={checking}
+                setChecking={setChecking}
+                state={state}
+              />
+            </>
+          )}
         </form>
         <SButtonWrapper>
           <SSubmitButton
             onClick={(e) => submit(e)}
             type="button"
             value="送信"
-            disable={disableSend}
           />
         </SButtonWrapper>
       </SContactWrapper>
@@ -138,26 +146,7 @@ const STitle = styled.h1`
   font-family: 'Josefin Sans', sans-serif;
   margin: 0;
   ${media.tablet`font-size: 2rem; margin-top:5rem;`}
-  ${media.phone`font-size: 2.5rem; margin-top: 3rem;`} /* :before {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 2px;
-    background-color: #898a8a;
-    left: 36%;
-    top: 18%;
-    ${media.tablet`display:none;`}
-  }
-  :after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 2px;
-    background-color: #898a8a;
-    right: 36%;
-    top: 18%;
-    ${media.tablet`display:none;`}
-  } */
+  ${media.phone`font-size: 2.5rem; margin-top: 3rem;`}
 `;
 
 //****************************Form********************************** */
@@ -193,7 +182,7 @@ const SInput = styled.input`
   border-radius: 8px;
   ${media.tablet` font-size: 0.75rem;`}
   ${media.phone` font-size: 0.75rem;`}
-  &:focus::-webkit-input-placeholder {
+    &:focus::-webkit-input-placeholder {
     color: transparent;
   }
 `;
@@ -232,5 +221,6 @@ const SSubmitButton = styled.input`
   ${media.phone`font-size: 1rem; padding: 8px `}
   :hover {
     background: #0090aa;
+    cursor: pointer;
   }
 `;

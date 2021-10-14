@@ -16,7 +16,9 @@ export const Header = () => {
   return (
     <>
       <SHeader>
-        <LogoLink />
+        <SImagewrapper>
+          <LogoLink />
+        </SImagewrapper>
         <SNav>
           <LinkTag to="/kiyoooooooo">Home</LinkTag>
           <LinkTag to="/contact">Contact</LinkTag>
@@ -33,6 +35,11 @@ const SHeader = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 5% 4% 0;
+`;
+
+const SImagewrapper = styled.div`
+  width: 100px;
+  height: 100px;
 `;
 
 const SNav = styled.nav`

@@ -14,7 +14,7 @@ import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 //image
-import nekonu from '../images/nekonu.png';
+import ganmen from '../images/ganmen.jpeg';
 
 //animation
 import { RoupInf } from '../util/animation';
@@ -38,7 +38,7 @@ export const AboutPage = () => {
         <SAboutWrapper>
           <SArticle>
             <SImageWrapper move="top">
-              <SMyImage src={nekonu} alt="img" />
+              <SMyImage src={ganmen} alt="img" />
             </SImageWrapper>
             <SSNSWrapper>
               <ScrollRevealContainer move="left">

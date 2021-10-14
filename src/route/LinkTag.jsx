@@ -1,8 +1,8 @@
 //lib
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-//function
 
+//function
 import { media } from '../util/MediaQuery';
 
 export const LinkTag = (props) => {

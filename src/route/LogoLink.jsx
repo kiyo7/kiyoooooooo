@@ -6,20 +6,22 @@ import { Link } from 'react-router-dom';
 import { media } from '../util/MediaQuery';
 
 //image
-import logo from '../images/logo.png';
+import nekonu from '../images/nekonu.png';
 
 //animation
-import { LogoSpin } from '../util/animation';
+import { RoupInf } from '../util/animation';
 
 export const LogoLink = () => {
   return (
     <Link to="/kiyoooooooo">
-      <SLogo src={logo} alt="logo" />
+      <SLogo src={nekonu} alt="logo" />
     </Link>
   );
 };
 
 const SLogo = styled.img`
-  animation: ${LogoSpin} 2.5s infinite ease-in-out alternate;
+  animation: ${RoupInf} infinite 10s linear;
+
+  width: 100%;
   ${media.phone`width: 60%;`};
 `;

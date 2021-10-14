@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Header } from './Header/Header';
 import { MainPage } from './Page/MainPage';
 import { ContactPage } from './Page/ContactPage';
+import { Page404 } from './Page/Page404';
 import { Footer } from './Footer/Footer';
 
 //image
@@ -29,6 +30,9 @@ function App() {
           <Route path="/contact">
             <ContactPage />
           </Route>
+          <Route path="*">
+            <Page404 />
+          </Route>
         </Switch>
         <Footer />
       </SAllWrapper>
@@ -44,7 +48,6 @@ const SAllWrapper = styled.div`
   box-sizing: border-box;
   min-height: 100vh;
   background-size: cover;
-
   animation: ${Screen} 2s linear;
 `;
 

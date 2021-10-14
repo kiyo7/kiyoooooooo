@@ -12,18 +12,15 @@ const my = [
   {
     question: '[Name]',
     answer: '清川  尚 / Hisashi Kiyokawa',
-    delay: '0s',
   },
   {
     question: '[Age and Birthday]',
     answer: '20歳 [2001/03/24]',
-    delay: '0.5s',
   },
   {
     question: '[Hobby]',
     answer:
-      'ガジェット好き ネットサーフィン ダーツ 音楽を聴く バスケ 猫と戯れる ',
-    delay: '1s',
+      'ガジェット好き 猫好き ネットサーフィン ダーツ 音楽を聴く バスケ アニメ ',
   },
 ];
 
@@ -41,9 +38,7 @@ export const Introduction = () => {
       <SIntroWrapper>
         <SSkillIconWrapper>
           [Skill]
-          {/* <SSkillIconWrapper> */}
           <SkillIcon />
-          {/* </SSkillIconWrapper> */}
         </SSkillIconWrapper>
       </SIntroWrapper>
     </ScrollRevealContainer>
@@ -69,9 +64,8 @@ const SSelfIntroduction = styled(Desc)`
   font-weight: bold;
   font-family: sans-serif;
   letter-spacing: 0.3rem;
-  ${media.phone`letter-spacing: 0.08rem;`}
-
   color: #747373;
+  ${media.phone`letter-spacing: 0.08rem;`}
 
   :after {
     content: '';
