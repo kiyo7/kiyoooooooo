@@ -14,13 +14,12 @@ const my = [
     answer: '清川  尚 / Hisashi Kiyokawa',
   },
   {
-    question: '[Age and Birthday]',
+    question: '[Age Birthday]',
     answer: '20歳 [2001/03/24]',
   },
   {
     question: '[Hobby]',
-    answer:
-      'ガジェット好き 猫好き ネットサーフィン ダーツ 音楽を聴く バスケ アニメ ',
+    answer: 'ガジェット好き 猫好き ネットサーフィン ダーツ 音楽 アニメ ',
   },
 ];
 

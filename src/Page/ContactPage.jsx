@@ -1,51 +1,20 @@
 //lib
-import { useReducer, useState } from 'react';
 import styled from 'styled-components';
-import { init, send } from 'emailjs-com';
 
 //function
 import { media } from '../util/MediaQuery';
 
-//function
-import { reducer, initialState } from '../reducer/reducer';
+//hooks
+import { useSendEmail } from '../hooks/useSendEmail';
 
 //components
 import { CheckingModal } from '../modal/CheckingModal';
 
 export const ContactPage = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const [checking, setChecking] = useState(false);
-
-  const sendEmail = () => {
-    const user_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_USER_ID;
-    const service_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_SERVICE_ID;
-    const template_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_TEMPLATE_ID;
-    if (
-      user_id !== undefined &&
-      service_id !== undefined &&
-      template_id !== undefined
-    ) {
-      init(user_id);
-
-      const template_param = {
-        to_name: state.name,
-        email: state.email,
-        title: state.title,
-        message: state.message,
-      };
-
-      send(service_id, template_id, template_param)
-        .then(() => {
-          console.log('success to send email');
-          dispatch({ type: 'reset' });
-        })
-        .catch((e) => console.log(e));
-    }
-  };
+  const { state, sendEmail, dispatch } = useSendEmail();
 
   const submit = (e) => {
     e.preventDefault();
-    setChecking(true);
     sendEmail();
   };
 
@@ -113,15 +82,11 @@ export const ContactPage = () => {
               }}
             />
           </SContactBox>
-          {checking && (
+          {/* {checking && (
             <>
-              <CheckingModal
-                checking={checking}
-                setChecking={setChecking}
-                state={state}
-              />
+              <CheckingModal checking={checking} state={state} />
             </>
-          )}
+          )} */}
         </form>
         <SButtonWrapper>
           <SSubmitButton

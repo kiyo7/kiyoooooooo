@@ -17,9 +17,9 @@ export const SkillIcon = () => {
   );
 };
 const SIconWrapper = styled.div`
-  width: 10%;
+  width: 9%;
   display: flex;
-  margin-bottom: 1%;
+  margin: 2% 0;
   ${media.phone`margin-bottom: 6%;`};
 `;
 

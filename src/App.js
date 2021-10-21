@@ -7,9 +7,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //component
 import { Header } from './Header/Header';
-import { MainPage } from './Page/MainPage';
-import { ContactPage } from './Page/ContactPage';
-import { Page404 } from './Page/Page404';
 import { Footer } from './Footer/Footer';
 
 //image
@@ -17,6 +14,7 @@ import back from './images/back.jpeg';
 
 //animation
 import { Screen } from './util/animation';
+import { mainRouter } from './route/mainRouter';
 
 function App() {
   return (
@@ -24,15 +22,11 @@ function App() {
       <SAllWrapper>
         <Header />
         <Switch>
-          <Route exact path="/kiyoooooooo">
-            <MainPage />
-          </Route>
-          <Route path="/contact">
-            <ContactPage />
-          </Route>
-          <Route path="*">
-            <Page404 />
-          </Route>
+          {mainRouter.map((route) => (
+            <Route key={route.path} exact={route.exact} path={route.path}>
+              {route.children}
+            </Route>
+          ))}
         </Switch>
         <Footer />
       </SAllWrapper>
