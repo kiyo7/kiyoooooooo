@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kiyoooooooo/static/css/main.fd75a149.chunk.css",
-    "main.js": "/kiyoooooooo/static/js/main.203f0618.chunk.js",
-    "main.js.map": "/kiyoooooooo/static/js/main.203f0618.chunk.js.map",
+    "main.js": "/kiyoooooooo/static/js/main.9a105ccd.chunk.js",
+    "main.js.map": "/kiyoooooooo/static/js/main.9a105ccd.chunk.js.map",
     "runtime-main.js": "/kiyoooooooo/static/js/runtime-main.52daba05.js",
     "runtime-main.js.map": "/kiyoooooooo/static/js/runtime-main.52daba05.js.map",
     "static/css/2.786ae0dd.chunk.css": "/kiyoooooooo/static/css/2.786ae0dd.chunk.css",
@@ -22,13 +22,14 @@
     "static/media/nekonu.9c0ea08a.png": "/kiyoooooooo/static/media/nekonu.9c0ea08a.png",
     "static/media/rails.26d18a6e.svg": "/kiyoooooooo/static/media/rails.26d18a6e.svg",
     "static/media/react.e27571ea.svg": "/kiyoooooooo/static/media/react.e27571ea.svg",
-    "static/media/ruby.67bc5fac.svg": "/kiyoooooooo/static/media/ruby.67bc5fac.svg"
+    "static/media/ruby.67bc5fac.svg": "/kiyoooooooo/static/media/ruby.67bc5fac.svg",
+    "static/media/typescript.17d5e87e.svg": "/kiyoooooooo/static/media/typescript.17d5e87e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.52daba05.js",
     "static/css/2.786ae0dd.chunk.css",
     "static/js/2.53819402.chunk.js",
     "static/css/main.fd75a149.chunk.css",
-    "static/js/main.203f0618.chunk.js"
+    "static/js/main.9a105ccd.chunk.js"
   ]
 }
