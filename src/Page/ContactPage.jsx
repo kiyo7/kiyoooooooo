@@ -11,11 +11,12 @@ import { useSendEmail } from '../hooks/useSendEmail';
 import { CheckingModal } from '../modal/CheckingModal';
 
 export const ContactPage = () => {
-  const { state, sendEmail, dispatch } = useSendEmail();
+  const { state, sendEmail, sendSelf, dispatch } = useSendEmail();
 
   const submit = (e) => {
     e.preventDefault();
     sendEmail();
+    sendSelf();
   };
 
   // const disableSend = () => {
@@ -25,6 +26,7 @@ export const ContactPage = () => {
   return (
     <SContact>
       <STitle>CONTACT</STitle>
+      <p style={{ textAlign: 'center', fontSize: '1rem', color: 'red' }}></p>
       <SContactWrapper>
         <form action="submit">
           <SContactBox>

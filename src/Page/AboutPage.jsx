@@ -10,7 +10,12 @@ import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub,
+  faTwitter,
+  faGitlab,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 //image
@@ -43,14 +48,29 @@ export const AboutPage = () => {
             <SSNSWrapper>
               <ScrollRevealContainer move="left">
                 <a href="https://github.com/kiyo7">
-                  <SSNSIcon icon={faGithub} size="5x" />
+                  <SSNSIcon icon={faGithub} size="4x" />
                 </a>
                 <p>Github</p>
               </ScrollRevealContainer>
-              <div style={{ width: '100%' }}></div>
-              <ScrollRevealContainer move="right">
+              <div>&ensp; </div>
+              <ScrollRevealContainer move="left">
+                <a href="https://gitlab.com/kiyo7">
+                  <SSNSIcon icon={faGitlab} size="4x" />
+                </a>
+                <p>Gitlab</p>
+              </ScrollRevealContainer>
+              <div>&ensp; </div>
+              <ScrollRevealContainer move="left">
+                <a href="https://www.instagram.com/kyo__n.3/">
+                  <SSNSIcon icon={faInstagram} size="4x" />
+                </a>
+                <p>Instagram</p>
+              </ScrollRevealContainer>
+              <div>&ensp; </div>
+              <ScrollRevealContainer move="left">
+                <div style={{ width: '100%' }}></div>
                 <a href="https://twitter.com/DwpVir">
-                  <SSNSIcon icon={faTwitter} size="5x" />
+                  <SSNSIcon icon={faTwitter} size="4x" />
                 </a>
                 <p>Twitter</p>
               </ScrollRevealContainer>

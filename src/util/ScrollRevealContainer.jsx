@@ -24,5 +24,9 @@ export const ScrollRevealContainer = ({ children, move }) => {
       });
   }, [sectionRef, move]);
 
-  return <div ref={sectionRef}>{children}</div>;
+  return (
+    <div style={{ width: '100%' }} ref={sectionRef}>
+      {children}
+    </div>
+  );
 };

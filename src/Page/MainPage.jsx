@@ -11,6 +11,10 @@ import { media } from '../util/MediaQuery';
 //animation
 import { Trans } from '../util/animation';
 
+//font-awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
+
 export const MainPage = () => {
   return (
     <>
@@ -26,6 +30,9 @@ export const MainPage = () => {
             </SMainTitle>
           </STitleWrapper>
         </ScrollRevealContainer>
+        <div style={{ textAlign: 'center', color: '#a09b9d' }}>
+          <FontAwesomeIcon icon={faChevronCircleDown} size={'4x'} />
+        </div>
       </SWrapper>
       <AboutPage />
     </>
