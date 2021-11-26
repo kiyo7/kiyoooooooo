@@ -4,7 +4,6 @@ import scrollReveal from 'scrollreveal';
 
 export const ScrollRevealContainer = ({ children, move }) => {
   const sectionRef = useRef(null);
-  console.log(sectionRef);
 
   useEffect(() => {
     if (sectionRef.current)
