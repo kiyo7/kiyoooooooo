@@ -10,7 +10,7 @@ export const ScrollRevealContainer = ({ children, move }) => {
     if (sectionRef.current)
       scrollReveal().reveal(sectionRef.current, {
         reset: true,
-        delay: 700,
+        delay: 1000,
         opacity: 0,
         origin:
           move === 'left'
