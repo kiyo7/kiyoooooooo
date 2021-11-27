@@ -24,7 +24,7 @@ import ganmen from '../images/ganmen.jpeg';
 //animation
 import { RoupInf } from '../util/animation';
 
-export const AboutPage = () => {
+export const AboutPage = (props) => {
   return (
     <>
       <SAboutPage>
@@ -48,21 +48,33 @@ export const AboutPage = () => {
             <SSNSWrapper>
               <ScrollRevealContainer move="left">
                 <a href="https://github.com/kiyo7">
-                  <SSNSIcon icon={faGithub} size="4x" />
+                  <SSNSIcon
+                    icon={faGithub}
+                    size="4x"
+                    title={'Githubに移動します'}
+                  />
                 </a>
                 <p>Github</p>
               </ScrollRevealContainer>
               <div>&ensp; </div>
               <ScrollRevealContainer move="left">
                 <a href="https://gitlab.com/kiyo7">
-                  <SSNSIcon icon={faGitlab} size="4x" />
+                  <SSNSIcon
+                    icon={faGitlab}
+                    size="4x"
+                    title={'Gitlabに移動します'}
+                  />
                 </a>
                 <p>Gitlab</p>
               </ScrollRevealContainer>
               <div>&ensp; </div>
               <ScrollRevealContainer move="left">
                 <a href="https://www.instagram.com/kyo__n.3/">
-                  <SSNSIcon icon={faInstagram} size="4x" />
+                  <SSNSIcon
+                    icon={faInstagram}
+                    size="4x"
+                    title={'Instagramに移動します'}
+                  />
                 </a>
                 <p>Instagram</p>
               </ScrollRevealContainer>
@@ -70,7 +82,11 @@ export const AboutPage = () => {
               <ScrollRevealContainer move="left">
                 <div style={{ width: '100%' }}></div>
                 <a href="https://twitter.com/DwpVir">
-                  <SSNSIcon icon={faTwitter} size="4x" />
+                  <SSNSIcon
+                    icon={faTwitter}
+                    size="4x"
+                    title={'Twitterに移動します'}
+                  />
                 </a>
                 <p>Twitter</p>
               </ScrollRevealContainer>

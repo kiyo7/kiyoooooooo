@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 import { media } from '../util/MediaQuery';
 
 export const LinkTag = (props) => {
-  const { to, children = '' } = props;
+  const { to, children = '', title } = props;
 
   return (
     <SNavContent>
-      <SLink to={to}>{children}</SLink>
+      <SLink to={to} title={title}>
+        {children}
+      </SLink>
     </SNavContent>
   );
 };

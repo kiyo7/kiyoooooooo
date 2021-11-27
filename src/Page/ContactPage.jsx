@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 //lib
 import styled from 'styled-components';
 
@@ -58,7 +59,7 @@ export const ContactPage = () => {
             />
           </SContactBox>
           <SContactBox>
-            <SLabel htmlFor="title">タイトル(任意)</SLabel>
+            <SLabel htmlFor="title">タイトル</SLabel>
             <SInput
               id="title"
               type="text"
@@ -96,6 +97,18 @@ export const ContactPage = () => {
             type="button"
             value="送信"
           />
+          <h3>
+            メールの処理はEmail.jsライブラリを使用させていただいています。
+            <span>
+              <a
+                href="https://www.emailjs.com/"
+                target="_blank"
+                style={{ textDecoration: 'underline' }}
+              >
+                こちら
+              </a>
+            </span>
+          </h3>
         </SButtonWrapper>
       </SContactWrapper>
     </SContact>

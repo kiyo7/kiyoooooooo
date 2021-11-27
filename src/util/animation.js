@@ -61,10 +61,10 @@ export const Roup = keyframes`
 
 export const FadeIn = keyframes`
 from {
-  transform: translateX(500px);
-  opacity:0;
+  transform: translateY(-20px);
+
 }
 to {
   transform: translateX(0)
-  opacity: 1;
+
 }`;

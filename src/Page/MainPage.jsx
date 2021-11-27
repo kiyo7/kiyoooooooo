@@ -1,5 +1,6 @@
 //lib
 import styled from 'styled-components';
+import React, { useRef, useCallback } from 'react';
 
 //component
 import { AboutPage } from '../Page/AboutPage';
@@ -9,13 +10,22 @@ import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 import { media } from '../util/MediaQuery';
 
 //animation
-import { Trans } from '../util/animation';
+import { FadeIn, Trans } from '../util/animation';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 export const MainPage = () => {
+  const ref = React.createRef();
+
+  const scrollBottom = useCallback(() => {
+    ref.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }, [ref]);
+
   return (
     <>
       <SWrapper>
@@ -31,9 +41,14 @@ export const MainPage = () => {
           </STitleWrapper>
         </ScrollRevealContainer>
         <div style={{ textAlign: 'center', color: '#a09b9d' }}>
-          <FontAwesomeIcon icon={faChevronCircleDown} size={'4x'} />
+          <SFontAwesomeIcon
+            icon={faChevronCircleDown}
+            size={'4x'}
+            onClick={scrollBottom}
+          />
         </div>
       </SWrapper>
+      <div ref={ref}></div>
       <AboutPage />
     </>
   );
@@ -65,10 +80,6 @@ const SWelcome = styled.h2`
 
   ${media.tablet`  font-size: 13vw;`}
   ${media.phone`  font-size: 13vw;`}
-
-  :hover {
-    opacity: 0.5;
-  }
 `;
 
 const SMainTitle = styled(SWelcome)`
@@ -78,12 +89,16 @@ const SMainTitle = styled(SWelcome)`
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
   ${media.tablet`font-size: 19vw;`}
   ${media.phone`font-size: 19vw;`}
-  :hover {
-    opacity: 0.5;
-    cursor: pointer;
-  }
 `;
 
 const SSpan = styled.span`
   border-bottom: 5px gray solid;
+`;
+
+const SFontAwesomeIcon = styled(FontAwesomeIcon)`
+  animation: ${FadeIn} 1s infinite;
+  :hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
 `;

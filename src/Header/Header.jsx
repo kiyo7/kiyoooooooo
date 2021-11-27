@@ -20,8 +20,12 @@ export const Header = () => {
           <LogoLink />
         </SImagewrapper>
         <SNav>
-          <LinkTag to="/kiyoooooooo">Home</LinkTag>
-          <LinkTag to="/contact">Contact</LinkTag>
+          <LinkTag to="/kiyoooooooo" title={'HOMEページに移動します'}>
+            Home
+          </LinkTag>
+          <LinkTag to="/contact" title={'CONTACTページに移動します'}>
+            Contact
+          </LinkTag>
         </SNav>
         <SHumbuggerWrapper>
           <Humbugger />
