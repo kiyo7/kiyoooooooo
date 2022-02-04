@@ -1,7 +1,7 @@
 //lib
 import styled from 'styled-components';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <SCopyRight>
       <p>&copy; 2021 kiyo</p>

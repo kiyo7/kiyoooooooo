@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import React, { useRef, useCallback } from 'react';
 
 //component
-import { AboutPage } from '../Page/AboutPage';
+import { AboutPage } from './AboutPage';
 import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 
 //function
-import { media } from '../util/MediaQuery';
+import { tab, sp } from '../util/MediaQuery';
 
 //animation
 import { FadeIn, Trans } from '../util/animation';
@@ -16,11 +16,11 @@ import { FadeIn, Trans } from '../util/animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 
-export const MainPage = () => {
-  const ref = React.createRef();
+export const MainPage: React.FC = () => {
+  const ref: React.RefObject<HTMLDivElement> = React.createRef();
 
   const scrollBottom = useCallback(() => {
-    ref.current.scrollIntoView({
+    ref.current!.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
@@ -56,8 +56,8 @@ export const MainPage = () => {
 
 const SWrapper = styled.main`
   min-height: 100vh;
-  ${media.tablet`  margin-top: 10%;`}
-  ${media.phone`  margin-top: 30%;`};
+  ${tab`  margin-top: 10%;`}
+  ${sp`  margin-top: 30%;`};
 `;
 
 const STitleWrapper = styled.div`
@@ -78,8 +78,8 @@ const SWelcome = styled.h2`
   animation: ${Trans} 5s linear;
   font-size: 6rem;
 
-  ${media.tablet`  font-size: 13vw;`}
-  ${media.phone`  font-size: 13vw;`}
+  ${tab`  font-size: 13vw;`}
+  ${sp`  font-size: 13vw;`}
 `;
 
 const SMainTitle = styled(SWelcome)`
@@ -87,8 +87,8 @@ const SMainTitle = styled(SWelcome)`
   margin-top: 1rem;
   font-size: 7rem;
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
-  ${media.tablet`font-size: 19vw;`}
-  ${media.phone`font-size: 19vw;`}
+  ${tab`font-size: 19vw;`}
+  ${sp`font-size: 19vw;`}
 `;
 
 const SSpan = styled.span`

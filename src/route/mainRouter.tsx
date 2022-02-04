@@ -3,7 +3,13 @@ import { MainPage } from '../Page/MainPage';
 import { ContactPage } from '../Page/ContactPage';
 import { Page404 } from '../Page/Page404';
 
-export const mainRouter = [
+interface Path {
+  path: string;
+  exact: boolean;
+  children: React.ReactElement;
+}
+
+export const mainRouter: Path[] = [
   {
     path: '/kiyoooooooo',
     exact: true,

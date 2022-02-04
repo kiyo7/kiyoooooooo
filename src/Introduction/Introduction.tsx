@@ -2,10 +2,10 @@
 import styled from 'styled-components';
 
 //function
-import { media } from '../util/MediaQuery';
+import { sp } from '../util/MediaQuery';
 
 //component
-import { SkillIcon } from '../Introduction/SkillIcon';
+import { SkillIcon } from './SkillIcon';
 import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
 
 const my = [
@@ -23,7 +23,7 @@ const my = [
   },
 ];
 
-export const Introduction = () => {
+export const Introduction: React.FC = () => {
   return (
     <ScrollRevealContainer move="left">
       {my.map((m, key) => {
@@ -54,7 +54,7 @@ const Desc = styled.p`
 
 const SIntroWrapper = styled.div`
   margin-bottom: 4%;
-  ${media.phone`margin-bottom: 6%;`}
+  ${sp`margin-bottom: 6%;`}
 `;
 
 const SSelfIntroduction = styled(Desc)`
@@ -64,7 +64,7 @@ const SSelfIntroduction = styled(Desc)`
   font-family: sans-serif;
   letter-spacing: 0.3rem;
   color: #747373;
-  ${media.phone`letter-spacing: 0.08rem;`}
+  ${sp`letter-spacing: 0.08rem;`}
 
   :after {
     content: '';

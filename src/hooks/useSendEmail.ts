@@ -1,16 +1,17 @@
 //lib
-import { useReducer, useState, useCallback } from 'react';
+import { useReducer, useCallback } from 'react';
 import { init, send } from 'emailjs-com';
 
 //reducer
-import { reducer, initialState } from '../reducer/reducer';
+import { reducer, initialState, State, Action } from '../reducer/reducer';
 
 export const useSendEmail = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  // const [checking, setChecking] = useState(false);
+  const [state, dispatch] = useReducer<React.Reducer<State, Action>>(
+    reducer,
+    initialState
+  );
 
   const sendEmail = useCallback(() => {
-    // setChecking(true);
     const user_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_USER_ID;
     const service_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_SERVICE_ID;
     const template_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_TEMPLATE_ID;
@@ -32,17 +33,14 @@ export const useSendEmail = () => {
         .then(() => {
           console.log('success to send email');
           dispatch({ type: 'reset' });
-          // setChecking(false);
         })
         .catch((e) => {
           console.log(e);
-          // setChecking(false);
         });
     }
   }, [state]);
 
   const sendSelf = useCallback(() => {
-    // setChecking(true);
     const user_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_USER_ID;
     const service_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_SERVICE_ID;
     const template_id = process.env.REACT_APP_PORTFOLIO_EMAILJS_TEMPLATE_ID;
@@ -64,11 +62,9 @@ export const useSendEmail = () => {
         .then(() => {
           console.log('success to send email');
           dispatch({ type: 'reset' });
-          // setChecking(false);
         })
         .catch((e) => {
           console.log(e);
-          // setChecking(false);
         });
     }
   }, [state]);

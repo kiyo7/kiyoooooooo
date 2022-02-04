@@ -16,7 +16,7 @@ import back from './images/back.jpeg';
 import { Screen } from './util/animation';
 import { mainRouter } from './route/mainRouter';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <SAllWrapper>
@@ -32,7 +32,7 @@ function App() {
       </SAllWrapper>
     </Router>
   );
-}
+};
 
 const SAllWrapper = styled.div`
   background-image: url(${back});

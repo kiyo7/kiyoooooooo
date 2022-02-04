@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 //function
 import { icons } from './skill';
-import { media } from '../util/MediaQuery';
+import { sp } from '../util/MediaQuery';
 
-export const SkillIcon = () => {
+export const SkillIcon: React.FC = () => {
   return (
     <>
       <SIconWrapper>
@@ -20,7 +20,7 @@ const SIconWrapper = styled.div`
   width: 9%;
   display: flex;
   margin: 2% 0;
-  ${media.phone`margin-bottom: 6%;`};
+  ${sp`margin-bottom: 6%;`};
 `;
 
 const SIcon = styled.img`

@@ -3,9 +3,15 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 //function
-import { media } from '../util/MediaQuery';
+import { tab, sp } from '../util/MediaQuery';
 
-export const LinkTag = (props) => {
+interface Props {
+  to: string;
+  children: JSX.Element | string | React.ReactNode;
+  title?: string;
+}
+
+export const LinkTag: React.FC<Props> = (props) => {
   const { to, children = '', title } = props;
 
   return (
@@ -24,8 +30,8 @@ const SNavContent = styled.div`
   font-style: italic;
   transition-property: transform;
   transition-duration: 0.3s;
-  ${media.tablet`font-size: 1.7rem; margin-top: 0px`}
-  ${media.phone`font-size: 1.3rem;`}
+  ${tab`font-size: 1.7rem; margin-top: 0px`}
+  ${sp`font-size: 1.3rem;`}
   :hover {
     cursor: pointer;
     color: #c9c6c6;

@@ -2,8 +2,13 @@
 import { useRef, useEffect } from 'react';
 import scrollReveal from 'scrollreveal';
 
-export const ScrollRevealContainer = ({ children, move }) => {
-  const sectionRef = useRef(null);
+interface Props {
+  children: JSX.Element | string | React.ReactNode;
+  move: string;
+}
+
+export const ScrollRevealContainer: React.FC<Props> = ({ children, move }) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (sectionRef.current)

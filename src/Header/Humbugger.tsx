@@ -9,13 +9,13 @@ import 'antd/dist/antd.css';
 import { LinkTag } from '../route/LinkTag';
 
 //function
-import { media } from '../util/MediaQuery';
+import { sp, tab } from '../util/MediaQuery';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
-export const Humbugger = () => {
+export const Humbugger: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -59,9 +59,9 @@ const SButton = styled(Button)`
     opacity: 0.9;
     color: #bab7b7;
   }
-  ${media.tablet`  font-size: 1.3rem;
+  ${tab`  font-size: 1.3rem;
     width: 70px;
   height: 70px;`}
-  ${media.phone`  font-size: 0.825rem;  width: 50px;
+  ${sp`  font-size: 0.825rem;  width: 50px;
   height: 50px;`}
 `;

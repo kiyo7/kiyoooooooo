@@ -7,12 +7,12 @@ import { LogoLink } from '../route/LogoLink';
 import { Humbugger } from './Humbugger';
 
 //function
-import { media } from '../util/MediaQuery';
+import { tab, pc } from '../util/MediaQuery';
 
 //animation
 import { Slide } from '../util/animation';
 
-export const Header = () => {
+export const Header: React.FC = () => {
   return (
     <>
       <SHeader>
@@ -51,10 +51,10 @@ const SNav = styled.nav`
   list-style: none;
 
   animation: ${Slide} 2s linear;
-  ${media.tablet`  display:none`}
+  ${tab`display:none`}
 `;
 
 const SHumbuggerWrapper = styled.div`
-  ${media.desktop`  display:none`}
-  ${media.tablet`  display:static`}
+  ${pc`  display:none`}
+  ${tab`  display:static`}
 `;

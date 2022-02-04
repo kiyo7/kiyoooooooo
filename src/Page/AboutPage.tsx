@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 //function
-import { media } from '../util/MediaQuery';
+import { tab, sp } from '../util/MediaQuery';
 
 //component
 import { Introduction } from '../Introduction/Introduction';
@@ -24,7 +24,7 @@ import ganmen from '../images/ganmen.jpeg';
 //animation
 import { RoupInf } from '../util/animation';
 
-export const AboutPage = (props) => {
+export const AboutPage: React.FC = (props) => {
   return (
     <>
       <SAboutPage>
@@ -121,8 +121,8 @@ const STitle = styled.h1`
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
 
-  ${media.tablet`font-size: 4rem;`}
-  ${media.phone`font-size: 2rem; margin-top: 3rem;`}
+  ${tab`font-size: 4rem;`}
+  ${sp`font-size: 2rem; margin-top: 3rem;`}
 `;
 
 const SAboutWrapper = styled.div`
@@ -130,7 +130,7 @@ const SAboutWrapper = styled.div`
   display: flex;
   margin-top: 2rem;
   align-items: center;
-  ${media.tablet`flex-direction: column`};
+  ${tab`flex-direction: column`};
 `;
 
 //*****************************Article********************************* */
@@ -138,13 +138,13 @@ const SAboutWrapper = styled.div`
 const SArticle = styled.article`
   width: 40%;
   text-align: center;
-  ${media.tablet`width: 50%;`}
+  ${tab`width: 50%;`}
 `;
 
 const SImageWrapper = styled(ScrollRevealContainer)`
   width: 100%;
-  ${media.tablet`width: 100%;`}
-  ${media.phone`margin: 10% 0;`}
+  ${tab`width: 100%;`}
+  ${sp`margin: 10% 0;`}
 `;
 
 const SMyImage = styled.img`
@@ -158,8 +158,8 @@ const SSNSWrapper = styled.div`
   margin: 0 20%;
 
   display: flex;
-  ${media.tablet`margin: 10%;`}
-  ${media.phone`margin-bottom: 10% ;`}
+  ${tab`margin: 10%;`}
+  ${sp`margin-bottom: 10% ;`}
 `;
 
 const SSNSIcon = styled(FontAwesomeIcon)`
@@ -175,5 +175,5 @@ const SSNSIcon = styled(FontAwesomeIcon)`
 
 const SAside = styled.aside`
   width: 56%;
-  ${media.tablet`width: 80%;`}
+  ${tab`width: 80%;`}
 `;

@@ -3,18 +3,17 @@
 import styled from 'styled-components';
 
 //function
-import { media } from '../util/MediaQuery';
+import { tab, sp } from '../util/MediaQuery';
 
 //hooks
 import { useSendEmail } from '../hooks/useSendEmail';
 
 //components
-import { CheckingModal } from '../modal/CheckingModal';
 
 export const ContactPage = () => {
   const { state, sendEmail, sendSelf, dispatch } = useSendEmail();
 
-  const submit = (e) => {
+  const submit = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     e.preventDefault();
     sendEmail();
     sendSelf();
@@ -39,7 +38,7 @@ export const ContactPage = () => {
               type="text"
               value={state.name}
               placeholder="例) 田中 太郎"
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 dispatch({ type: 'name', payload: e.target.value });
               }}
             />
@@ -53,7 +52,7 @@ export const ContactPage = () => {
               type="text"
               value={state.email}
               placeholder="例) xxxxxxxxxxx@gmail.com"
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 dispatch({ type: 'email', payload: e.target.value });
               }}
             />
@@ -65,7 +64,7 @@ export const ContactPage = () => {
               type="text"
               value={state.title}
               placeholder="例) サイトの感想"
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 dispatch({ type: 'title', payload: e.target.value });
               }}
             />
@@ -77,19 +76,14 @@ export const ContactPage = () => {
             <STextArea
               id="message"
               value={state.message}
-              cols="30"
-              rows="10"
+              cols={30}
+              rows={10}
               placeholder="メッセージ欄です。ご自由にどうぞ!"
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
                 dispatch({ type: 'message', payload: e.target.value });
               }}
             />
           </SContactBox>
-          {/* {checking && (
-            <>
-              <CheckingModal checking={checking} state={state} />
-            </>
-          )} */}
         </form>
         <SButtonWrapper>
           <SSubmitButton
@@ -125,8 +119,8 @@ const STitle = styled.h1`
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
   margin: 0;
-  ${media.tablet`font-size: 2rem; margin-top:5rem;`}
-  ${media.phone`font-size: 2.5rem; margin-top: 3rem;`}
+  ${tab`font-size: 2rem; margin-top:5rem;`}
+  ${sp`font-size: 2.5rem; margin-top: 3rem;`}
 `;
 
 //****************************Form********************************** */
@@ -146,8 +140,8 @@ const SContactBox = styled.div`
 const SLabel = styled.label`
   font-size: 1.2rem;
   color: #615c5c;
-  ${media.tablet`font-size: 0.8rem;`}
-  ${media.phone`font-size: 0.5rem;`}
+  ${tab`font-size: 0.8rem;`}
+  ${sp`font-size: 0.5rem;`}
 `;
 
 const SRed = styled.span`
@@ -160,8 +154,8 @@ const SInput = styled.input`
   background: rgba(255, 255, 255, 0.5);
   border: 3px solid #fff;
   border-radius: 8px;
-  ${media.tablet` font-size: 0.75rem;`}
-  ${media.phone` font-size: 0.75rem;`}
+  ${tab` font-size: 0.75rem;`}
+  ${sp` font-size: 0.75rem;`}
     &:focus::-webkit-input-placeholder {
     color: transparent;
   }
@@ -174,8 +168,8 @@ const STextArea = styled.textarea`
   border: 3px solid #fff;
   border-radius: 8px;
   height: 6rem;
-  ${media.tablet`height: 6rem;`}
-  ${media.phone`height: 5rem; font-size: 0.75rem;`} 
+  ${tab`height: 6rem;`}
+  ${sp`height: 5rem; font-size: 0.75rem;`} 
   &:focus::-webkit-input-placeholder {
     color: transparent;
   }
@@ -197,8 +191,8 @@ const SSubmitButton = styled.input`
   border-radius: 8px;
   font-size: 0.9rem;
   margin-bottom: 1rem;
-  ${media.tablet`font-size: 1rem; padding: 10px `}
-  ${media.phone`font-size: 1rem; padding: 8px `}
+  ${tab`font-size: 1rem; padding: 10px `}
+  ${sp`font-size: 1rem; padding: 8px `}
   :hover {
     background: #0090aa;
     cursor: pointer;
