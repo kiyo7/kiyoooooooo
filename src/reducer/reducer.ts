@@ -1,5 +1,3 @@
-export const initialState = { name: '', email: '', title: '', message: '' };
-
 export type State = {
   name: string;
   email: string;
@@ -8,21 +6,34 @@ export type State = {
 };
 
 export type Action = {
-  type: 'name' | 'email' | 'title' | 'message' | 'reset';
-  payload?: any;
+  type: ActionType;
+  payload: State;
 };
 
-export const reducer: React.Reducer<State, Action> = (state, action) => {
+export enum ActionType {
+  NAME = 'NAME',
+  EMAIL = 'EMAIL',
+  TITLE = 'TITLE',
+  MESSAGE = 'MESSAGE',
+  RESET = 'RESET',
+}
+
+export const initialState = { name: '', email: '', title: '', message: '' };
+
+export const reducer: React.Reducer<State, Action> = (
+  state: State,
+  action: Action
+) => {
   switch (action.type) {
-    case 'name':
-      return { ...state, name: action.payload };
-    case 'email':
-      return { ...state, email: action.payload };
-    case 'title':
-      return { ...state, title: action.payload };
-    case 'message':
-      return { ...state, message: action.payload };
-    case 'reset':
+    case ActionType.NAME:
+      return { ...state, name: action.payload.name };
+    case ActionType.EMAIL:
+      return { ...state, email: action.payload.email };
+    case ActionType.TITLE:
+      return { ...state, title: action.payload.title };
+    case ActionType.MESSAGE:
+      return { ...state, message: action.payload.message };
+    case ActionType.RESET:
       return initialState;
     default:
       throw new Error();

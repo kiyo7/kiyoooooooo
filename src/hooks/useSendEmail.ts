@@ -5,6 +5,9 @@ import { init, send } from 'emailjs-com';
 //reducer
 import { reducer, initialState, State, Action } from '../reducer/reducer';
 
+//types
+import { ActionType } from '../reducer/reducer';
+
 export const useSendEmail = () => {
   const [state, dispatch] = useReducer<React.Reducer<State, Action>>(
     reducer,
@@ -32,7 +35,7 @@ export const useSendEmail = () => {
       send(service_id, template_id, template_param)
         .then(() => {
           console.log('success to send email');
-          dispatch({ type: 'reset' });
+          dispatch({ type: ActionType.RESET, payload: state });
         })
         .catch((e) => {
           console.log(e);
@@ -61,7 +64,7 @@ export const useSendEmail = () => {
       send(service_id, template_id, template_param)
         .then(() => {
           console.log('success to send email');
-          dispatch({ type: 'reset' });
+          dispatch({ type: ActionType.RESET, payload: state });
         })
         .catch((e) => {
           console.log(e);

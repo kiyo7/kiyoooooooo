@@ -8,9 +8,10 @@ import { tab, sp } from '../util/MediaQuery';
 //hooks
 import { useSendEmail } from '../hooks/useSendEmail';
 
-//components
+//types
+import { ActionType } from '../reducer/reducer';
 
-export const ContactPage = () => {
+export const ContactPage: React.FC = () => {
   const { state, sendEmail, sendSelf, dispatch } = useSendEmail();
 
   const submit = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
@@ -39,7 +40,10 @@ export const ContactPage = () => {
               value={state.name}
               placeholder="例) 田中 太郎"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                dispatch({ type: 'name', payload: e.target.value });
+                dispatch({
+                  type: ActionType.NAME,
+                  payload: { ...state, name: e.target.value },
+                });
               }}
             />
           </SContactBox>
@@ -53,7 +57,10 @@ export const ContactPage = () => {
               value={state.email}
               placeholder="例) xxxxxxxxxxx@gmail.com"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                dispatch({ type: 'email', payload: e.target.value });
+                dispatch({
+                  type: ActionType.EMAIL,
+                  payload: { ...state, email: e.target.value },
+                });
               }}
             />
           </SContactBox>
@@ -65,7 +72,10 @@ export const ContactPage = () => {
               value={state.title}
               placeholder="例) サイトの感想"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                dispatch({ type: 'title', payload: e.target.value });
+                dispatch({
+                  type: ActionType.TITLE,
+                  payload: { ...state, title: e.target.value },
+                });
               }}
             />
           </SContactBox>
@@ -80,7 +90,10 @@ export const ContactPage = () => {
               rows={10}
               placeholder="メッセージ欄です。ご自由にどうぞ!"
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
-                dispatch({ type: 'message', payload: e.target.value });
+                dispatch({
+                  type: ActionType.MESSAGE,
+                  payload: { ...state, message: e.target.value },
+                });
               }}
             />
           </SContactBox>
