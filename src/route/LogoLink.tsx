@@ -13,7 +13,7 @@ import { RoupInf } from '../util/animation';
 
 export const LogoLink: React.FC = () => {
   return (
-    <Link to="/kiyoooooooo" title={'HOMEページに移動します'}>
+    <Link to="/" title={'HOMEページに移動します'}>
       <SLogo src={nekonu} alt="logo" />
     </Link>
   );

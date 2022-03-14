@@ -31,7 +31,7 @@ export const Humbugger: React.FC = () => {
         <AlignLeftOutlined />
       </SButton>
       <Drawer placement="right" onClose={onClose} visible={visible} width="70%">
-        <LinkTag to="/kiyoooooooo">
+        <LinkTag to="/">
           <FontAwesomeIcon icon={faHome} />
           &ensp;Home
         </LinkTag>

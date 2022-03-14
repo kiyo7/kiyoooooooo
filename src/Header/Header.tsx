@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
           <LogoLink />
         </SImagewrapper>
         <SNav>
-          <LinkTag to="/kiyoooooooo" title={'HOMEページに移動します'}>
+          <LinkTag to="/" title={'HOMEページに移動します'}>
             Home
           </LinkTag>
           <LinkTag to="/contact" title={'CONTACTページに移動します'}>

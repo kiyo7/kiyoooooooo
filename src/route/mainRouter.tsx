@@ -11,7 +11,7 @@ interface Path {
 
 export const mainRouter: Path[] = [
   {
-    path: '/kiyoooooooo',
+    path: '/',
     exact: true,
     children: <MainPage />,
   },
