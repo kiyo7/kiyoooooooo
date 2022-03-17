@@ -2,15 +2,15 @@
 import styled from 'styled-components';
 
 //function
-import { sp } from '../util/MediaQuery';
-import { getAge } from '../util/getAge';
+import { sp } from '../../util/MediaQuery';
+import { getAge } from '../../util/getAge';
 
 //component
 import { SkillIcon } from './SkillIcon';
-import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
+import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
 
 //types
-import { Birthday } from '../types/type';
+import { Birthday } from '../../types/type';
 
 const birthday: Birthday = {
   year: 2001,

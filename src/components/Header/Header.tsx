@@ -7,10 +7,10 @@ import { LogoLink } from '../route/LogoLink';
 import { Humbugger } from './Humbugger';
 
 //function
-import { tab, pc } from '../util/MediaQuery';
+import { tab, pc } from '../../util/MediaQuery';
 
 //animation
-import { Slide } from '../util/animation';
+import { Slide } from '../../util/animation';
 
 export const Header: React.FC = () => {
   return (

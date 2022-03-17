@@ -3,3 +3,10 @@ export interface Birthday {
   month: number;
   date: number;
 }
+
+export interface State {
+  name: string;
+  email: string;
+  title: string;
+  message: string;
+}

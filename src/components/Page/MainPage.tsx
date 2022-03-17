@@ -4,13 +4,13 @@ import React, { useRef, useCallback } from 'react';
 
 //component
 import { AboutPage } from './AboutPage';
-import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
+import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
 
 //function
-import { tab, sp } from '../util/MediaQuery';
+import { tab, sp } from '../../util/MediaQuery';
 
 //animation
-import { FadeIn, Trans } from '../util/animation';
+import { FadeIn, Trans } from '../../util/animation';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

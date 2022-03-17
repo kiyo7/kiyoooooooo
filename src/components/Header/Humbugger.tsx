@@ -9,7 +9,7 @@ import 'antd/dist/antd.css';
 import { LinkTag } from '../route/LinkTag';
 
 //function
-import { sp, tab } from '../util/MediaQuery';
+import { sp, tab } from '../../util/MediaQuery';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

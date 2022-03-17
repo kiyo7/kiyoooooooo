@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 //function
 import { icons } from './skill';
-import { sp } from '../util/MediaQuery';
+import { sp } from '../../util/MediaQuery';
 
 export const SkillIcon: React.FC = () => {
   return (

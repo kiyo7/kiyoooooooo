@@ -2,11 +2,11 @@
 import styled from 'styled-components';
 
 //function
-import { tab, sp } from '../util/MediaQuery';
+import { tab, sp } from '../../util/MediaQuery';
 
 //component
 import { Introduction } from '../Introduction/Introduction';
-import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
+import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,10 +19,10 @@ import {
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 //image
-import ganmen from '../images/ganmen.jpeg';
+import ganmen from '../../images/ganmen.jpeg';
 
 //animation
-import { RoupInf } from '../util/animation';
+import { RoupInf } from '../../util/animation';
 
 export const AboutPage: React.FC = (props) => {
   return (

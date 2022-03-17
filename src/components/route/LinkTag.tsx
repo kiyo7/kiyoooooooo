@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 //function
-import { tab, sp } from '../util/MediaQuery';
+import { tab, sp } from '../../util/MediaQuery';
 
 interface Props {
   to: string;

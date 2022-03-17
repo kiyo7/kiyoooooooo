@@ -6,15 +6,15 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //component
-import { Header } from './Header/Header';
-import { Footer } from './Footer/Footer';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 
 //image
 import back from './images/back.jpeg';
 
 //animation
 import { Screen } from './util/animation';
-import { mainRouter } from './route/mainRouter';
+import { mainRouter } from './components/route/mainRouter';
 
 const App: React.FC = () => {
   return (
