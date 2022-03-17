@@ -3,10 +3,20 @@ import styled from 'styled-components';
 
 //function
 import { sp } from '../util/MediaQuery';
+import { getAge } from '../util/getAge';
 
 //component
 import { SkillIcon } from './SkillIcon';
 import { ScrollRevealContainer } from '../util/ScrollRevealContainer';
+
+//types
+import { Birthday } from '../types/type';
+
+const birthday: Birthday = {
+  year: 2001,
+  month: 3,
+  date: 24,
+};
 
 const my = [
   {
@@ -15,7 +25,7 @@ const my = [
   },
   {
     question: '[Age Birthday]',
-    answer: '20歳 [2001/03/24]',
+    answer: getAge(birthday) + '歳 [2001/03/24]',
   },
   {
     question: '[Hobby]',
@@ -36,7 +46,7 @@ export const Introduction: React.FC = () => {
       })}
       <SIntroWrapper>
         <SSkillIconWrapper>
-          [Skill]
+          <Desc>[Skill]</Desc>
           <SkillIcon />
         </SSkillIconWrapper>
       </SIntroWrapper>
