@@ -18,19 +18,21 @@ import { mainRouter } from './components/route/mainRouter';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <SAllWrapper>
-        <Header />
-        <Switch>
-          {mainRouter.map((route) => (
-            <Route key={route.path} exact={route.exact} path={route.path}>
-              {route.children}
-            </Route>
-          ))}
-        </Switch>
-        <Footer />
-      </SAllWrapper>
-    </Router>
+    <>
+      <Router>
+        <SAllWrapper>
+          <Header />
+          <Switch>
+            {mainRouter.map((route) => (
+              <Route key={route.path} exact={route.exact} path={route.path}>
+                {route.children}
+              </Route>
+            ))}
+          </Switch>
+        </SAllWrapper>
+      </Router>
+      <Footer />
+    </>
   );
 };
 
@@ -38,9 +40,7 @@ const SAllWrapper = styled.div`
   background-image: url(${back});
   width: 100vw;
   position: relative;
-  padding-bottom: 60px;
   box-sizing: border-box;
-  min-height: 100vh;
   background-size: cover;
   animation: ${Screen} 2s linear;
 `;

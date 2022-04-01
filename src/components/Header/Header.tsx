@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
 const SHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 5% 4% 0;
+  padding: 2% 4% 0;
 `;
 
 const SImagewrapper = styled.div`

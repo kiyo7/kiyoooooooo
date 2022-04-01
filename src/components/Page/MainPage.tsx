@@ -1,6 +1,6 @@
 //lib
 import styled from 'styled-components';
-import React, { useRef, useCallback } from 'react';
+import React, { useCallback } from 'react';
 
 //component
 import { AboutPage } from './AboutPage';
@@ -55,7 +55,6 @@ export const MainPage: React.FC = () => {
 };
 
 const SWrapper = styled.main`
-  min-height: 100vh;
   ${tab`  margin-top: 10%;`}
   ${sp`  margin-top: 30%;`};
 `;

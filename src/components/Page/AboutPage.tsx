@@ -10,12 +10,7 @@ import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faTwitter,
-  faGitlab,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
+
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 //image
@@ -45,52 +40,6 @@ export const AboutPage: React.FC = (props) => {
             <SImageWrapper move="top">
               <SMyImage src={ganmen} alt="img" />
             </SImageWrapper>
-            <SSNSWrapper>
-              <ScrollRevealContainer move="left">
-                <a href="https://github.com/kiyo7">
-                  <SSNSIcon
-                    icon={faGithub}
-                    size="4x"
-                    title={'Githubに移動します'}
-                  />
-                </a>
-                <p>Github</p>
-              </ScrollRevealContainer>
-              <div>&ensp; </div>
-              <ScrollRevealContainer move="left">
-                <a href="https://gitlab.com/kiyo7">
-                  <SSNSIcon
-                    icon={faGitlab}
-                    size="4x"
-                    title={'Gitlabに移動します'}
-                  />
-                </a>
-                <p>Gitlab</p>
-              </ScrollRevealContainer>
-              <div>&ensp; </div>
-              <ScrollRevealContainer move="left">
-                <a href="https://www.instagram.com/kyo__n.3/">
-                  <SSNSIcon
-                    icon={faInstagram}
-                    size="4x"
-                    title={'Instagramに移動します'}
-                  />
-                </a>
-                <p>Instagram</p>
-              </ScrollRevealContainer>
-              <div>&ensp; </div>
-              <ScrollRevealContainer move="left">
-                <div style={{ width: '100%' }}></div>
-                <a href="https://twitter.com/DwpVir">
-                  <SSNSIcon
-                    icon={faTwitter}
-                    size="4x"
-                    title={'Twitterに移動します'}
-                  />
-                </a>
-                <p>Twitter</p>
-              </ScrollRevealContainer>
-            </SSNSWrapper>
           </SArticle>
           <SAside>
             <Introduction />
@@ -111,7 +60,6 @@ const Span = styled.span`
 
 const SAboutPage = styled.div`
   width: 100%;
-  min-height: 100vh;
   padding: 0 4%;
 `;
 
@@ -133,8 +81,6 @@ const SAboutWrapper = styled.div`
   ${tab`flex-direction: column`};
 `;
 
-//*****************************Article********************************* */
-
 const SArticle = styled.article`
   width: 40%;
   text-align: center;
@@ -151,27 +97,6 @@ const SMyImage = styled.img`
   width: 72%;
   border-radius: 50%;
 `;
-
-//*****************************Sns********************************* */
-
-const SSNSWrapper = styled.div`
-  margin: 0 20%;
-
-  display: flex;
-  ${tab`margin: 10%;`}
-  ${sp`margin-bottom: 10% ;`}
-`;
-
-const SSNSIcon = styled(FontAwesomeIcon)`
-  margin-bottom: 10%;
-  color: #605a57;
-  :hover {
-    cursor: pointer;
-    color: black;
-  }
-`;
-
-//*****************************Aside********************************* */
 
 const SAside = styled.aside`
   width: 56%;

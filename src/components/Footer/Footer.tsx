@@ -1,21 +1,23 @@
 //lib
 import styled from 'styled-components';
+import SNS from '../SNS/SNS';
 
 export const Footer: React.FC = () => {
   return (
-    <SCopyRight>
-      <p>&copy; 2021 kiyo</p>
-    </SCopyRight>
+    <>
+      <SFooter>
+        <SNS />
+        <p>&copy; 2021 kiyo</p>
+      </SFooter>
+    </>
   );
 };
 
-const SCopyRight = styled.footer`
+const SFooter = styled.footer`
   width: 100%;
   text-align: center;
-  padding: 10px 0;
-  position: absolute;
-  bottom: 0;
-  color: white;
+  padding-top: 30px;
+  color: #5c6880;
   font-size: 0.875rem;
   background-color: #d3d3d3;
 `;

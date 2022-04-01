@@ -29,7 +29,11 @@ const my = [
   },
   {
     question: '[Hobby]',
-    answer: 'ガジェット好き 猫好き ネットサーフィン ダーツ 音楽 アニメ 麻雀 ',
+    answer: 'ガジェット収集  ネットサーフィン ダーツ  麻雀 ',
+  },
+  {
+    question: '[Like]',
+    answer: '猫',
   },
 ];
 
@@ -74,7 +78,7 @@ const SSelfIntroduction = styled(Desc)`
   font-family: sans-serif;
   letter-spacing: 0.3rem;
   color: #747373;
-  ${sp`letter-spacing: 0.08rem;`}
+  ${sp`letter-spacing: 0.08rem; font-size: 0.8rem`}
 
   :after {
     content: '';
@@ -90,7 +94,7 @@ const SSelfIntroduction = styled(Desc)`
 const SSkillIconWrapper = styled.div`
   :after {
     content: '';
-    display: block;
+    display: flex;
     position: absolute;
     width: 100%;
     height: 3px;

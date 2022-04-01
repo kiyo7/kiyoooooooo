@@ -19,12 +19,13 @@ export const SkillIcon: React.FC = () => {
 const SIconWrapper = styled.div`
   width: 9%;
   display: flex;
+  overflow-wrap: break-word;
   margin: 2% 0;
   ${sp`margin-bottom: 6%;`};
 `;
 
 const SIcon = styled.img`
-  width: 100%;
-  margin: 0 30%;
+  width: 75%;
+  margin: 0 20%;
   opacity: 0.75;
 `;
