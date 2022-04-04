@@ -1,6 +1,3 @@
-//style
-import './App.css';
-
 //lib
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -15,6 +12,9 @@ import back from './images/back.jpeg';
 //animation
 import { Screen } from './util/animation';
 import { mainRouter } from './components/route/mainRouter';
+
+//style
+import './App.css';
 
 const App: React.FC = () => {
   return (

@@ -1,15 +1,13 @@
 //lib
 import styled from 'styled-components';
-import SNS from '../SNS/SNS';
+import { SNS } from '../SNS/SNS';
 
 export const Footer: React.FC = () => {
   return (
-    <>
-      <SFooter>
-        <SNS />
-        <p>&copy; 2021 kiyo</p>
-      </SFooter>
-    </>
+    <SFooter>
+      <SNS />
+      <p>&copy; 2021 kiyo</p>
+    </SFooter>
   );
 };
 

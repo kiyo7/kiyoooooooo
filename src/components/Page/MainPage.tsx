@@ -17,14 +17,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 export const MainPage: React.FC = () => {
-  const ref: React.RefObject<HTMLDivElement> = React.createRef();
+  const aboutPageRef: React.RefObject<HTMLDivElement> = React.createRef();
 
   const scrollBottom = useCallback(() => {
-    ref.current!.scrollIntoView({
+    aboutPageRef.current!.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
-  }, [ref]);
+  }, [aboutPageRef]);
 
   return (
     <>
@@ -48,7 +48,7 @@ export const MainPage: React.FC = () => {
           />
         </div>
       </SWrapper>
-      <div ref={ref}></div>
+      <div ref={aboutPageRef} />
       <AboutPage />
     </>
   );

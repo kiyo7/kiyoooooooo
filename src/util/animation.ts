@@ -65,6 +65,5 @@ from {
 
 }
 to {
-  transform: translateX(0)
-
+  transform: translateY(0)
 }`;

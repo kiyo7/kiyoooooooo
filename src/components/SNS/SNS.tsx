@@ -1,60 +1,47 @@
-import React from 'react';
-import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
+//lib
+import styled from 'styled-components';
 
 //function
 import { tab, sp } from '../../util/MediaQuery';
 
+//font-awesome
 import {
   faGithub,
   faTwitter,
   faGitlab,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SNS: React.FC = () => {
+const Margin: React.FC = () => <div style={{ margin: '4%' }} />;
+
+export const SNS: React.FC = () => {
   return (
     <SDiv>
       <SSNSWrapper>
-        <ScrollRevealContainer move="left">
-          <a href="https://github.com/kiyo7">
-            <SSNSIcon icon={faGithub} size="2x" title={'Githubに移動します'} />
-          </a>
-        </ScrollRevealContainer>
-        <div>&ensp; </div>
-        <ScrollRevealContainer move="left">
-          <a href="https://gitlab.com/kiyo7">
-            <SSNSIcon icon={faGitlab} size="2x" title={'Gitlabに移動します'} />
-          </a>
-        </ScrollRevealContainer>
-        <div>&ensp; </div>
-        <ScrollRevealContainer move="left">
-          <a href="https://www.instagram.com/kyo__n.3/">
-            <SSNSIcon
-              icon={faInstagram}
-              size="2x"
-              title={'Instagramに移動します'}
-            />
-          </a>
-        </ScrollRevealContainer>
-        <div>&ensp; </div>
-        <ScrollRevealContainer move="left">
-          <div style={{ width: '100%' }}></div>
-          <a href="https://twitter.com/DwpVir">
-            <SSNSIcon
-              icon={faTwitter}
-              size="2x"
-              title={'Twitterに移動します'}
-            />
-          </a>
-        </ScrollRevealContainer>
+        <a href="https://github.com/kiyo7">
+          <SSNSIcon icon={faGithub} size="2x" title={'Githubに移動します'} />
+        </a>
+        <Margin />
+        <a href="https://gitlab.com/kiyo7">
+          <SSNSIcon icon={faGitlab} size="2x" title={'Gitlabに移動します'} />
+        </a>
+        <Margin />
+        <a href="https://www.instagram.com/kyo__n.3/">
+          <SSNSIcon
+            icon={faInstagram}
+            size="2x"
+            title={'Instagramに移動します'}
+          />
+        </a>
+        <Margin />
+        <a href="https://twitter.com/DwpVir">
+          <SSNSIcon icon={faTwitter} size="2x" title={'Twitterに移動します'} />
+        </a>
       </SSNSWrapper>
     </SDiv>
   );
 };
-
-export default SNS;
 
 const SDiv = styled.div`
   width: 30%;

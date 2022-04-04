@@ -10,16 +10,19 @@ import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
 
 //font-awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleUp, faCog } from '@fortawesome/free-solid-svg-icons';
 
 //image
 import ganmen from '../../images/ganmen.jpeg';
 
 //animation
-import { RoupInf } from '../../util/animation';
+import { RoupInf, FadeIn } from '../../util/animation';
 
-export const AboutPage: React.FC = (props) => {
+export const AboutPage: React.FC = () => {
+  const scrollUp = () => {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <SAboutPage>
@@ -45,6 +48,13 @@ export const AboutPage: React.FC = (props) => {
             <Introduction />
           </SAside>
         </SAboutWrapper>
+        <div style={{ textAlign: 'center', color: '#a09b9d' }}>
+          <SScrollIcon
+            icon={faChevronCircleUp}
+            size={'4x'}
+            onClick={scrollUp}
+          />
+        </div>
       </SAboutPage>
     </>
   );
@@ -61,6 +71,7 @@ const Span = styled.span`
 const SAboutPage = styled.div`
   width: 100%;
   padding: 0 4%;
+  position: relative;
 `;
 
 const STitle = styled.h1`
@@ -101,4 +112,15 @@ const SMyImage = styled.img`
 const SAside = styled.aside`
   width: 56%;
   ${tab`width: 80%;`}
+`;
+
+const SScrollIcon = styled(FontAwesomeIcon)`
+  position: absolute;
+  top: 90%;
+  right: 3%;
+  animation: ${FadeIn} 1s infinite;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
 `;

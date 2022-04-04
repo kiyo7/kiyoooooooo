@@ -29,7 +29,7 @@ const my = [
   },
   {
     question: '[Hobby]',
-    answer: 'ガジェット収集  ネットサーフィン ダーツ  麻雀 ',
+    answer: 'ガジェット収集 YouTube視聴 ダーツ 麻雀 プログラミング ',
   },
   {
     question: '[Like]',
