@@ -1,7 +1,7 @@
 //components
-import { MainPage } from '../Page/MainPage';
-import { ContactPage } from '../Page/ContactPage';
-import { Page404 } from '../Page/Page404';
+import { MainPage } from "../Pages/MainPage";
+import { ContactPage } from "../Pages/ContactPage";
+import { Page404 } from "../Pages/Page404";
 
 interface Path {
   path: string;
@@ -11,17 +11,17 @@ interface Path {
 
 export const mainRouter: Path[] = [
   {
-    path: '/',
+    path: "/",
     exact: true,
     children: <MainPage />,
   },
   {
-    path: '/contact',
+    path: "/contact",
     exact: false,
     children: <ContactPage />,
   },
   {
-    path: '*',
+    path: "*",
     exact: false,
     children: <Page404 />,
   },

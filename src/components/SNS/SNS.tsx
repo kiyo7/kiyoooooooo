@@ -1,42 +1,33 @@
 //lib
-import styled from 'styled-components';
+import styled from "styled-components";
 
 //function
-import { tab, sp } from '../../util/MediaQuery';
+import { tab, sp } from "../../util/MediaQuery";
 
 //font-awesome
 import {
   faGithub,
   faTwitter,
   faGitlab,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Margin: React.FC = () => <div style={{ margin: '4%' }} />;
+const Margin: React.FC = () => <div style={{ margin: "4%" }} />;
 
 export const SNS: React.FC = () => {
   return (
     <SDiv>
       <SSNSWrapper>
         <a href="https://github.com/kiyo7">
-          <SSNSIcon icon={faGithub} size="2x" title={'Githubに移動します'} />
+          <SSNSIcon icon={faGithub} size="2x" title={"Githubに移動します"} />
         </a>
         <Margin />
         <a href="https://gitlab.com/kiyo7">
-          <SSNSIcon icon={faGitlab} size="2x" title={'Gitlabに移動します'} />
-        </a>
-        <Margin />
-        <a href="https://www.instagram.com/kyo__n.3/">
-          <SSNSIcon
-            icon={faInstagram}
-            size="2x"
-            title={'Instagramに移動します'}
-          />
+          <SSNSIcon icon={faGitlab} size="2x" title={"Gitlabに移動します"} />
         </a>
         <Margin />
         <a href="https://twitter.com/DwpVir">
-          <SSNSIcon icon={faTwitter} size="2x" title={'Twitterに移動します'} />
+          <SSNSIcon icon={faTwitter} size="2x" title={"Twitterに移動します"} />
         </a>
       </SSNSWrapper>
     </SDiv>

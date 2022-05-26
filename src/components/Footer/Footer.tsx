@@ -1,6 +1,6 @@
 //lib
-import styled from 'styled-components';
-import { SNS } from '../SNS/SNS';
+import styled from "styled-components";
+import { SNS } from "../SNS/SNS";
 
 export const Footer: React.FC = () => {
   return (

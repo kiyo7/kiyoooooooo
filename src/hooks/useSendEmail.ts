@@ -1,12 +1,12 @@
 //lib
-import { useReducer, useCallback } from 'react';
-import { init, send } from 'emailjs-com';
+import { useReducer, useCallback } from "react";
+import { init, send } from "emailjs-com";
 
 //reducer
-import { reducer, initialState, State, Action } from '../reducer/reducer';
+import { reducer, initialState, State, Action } from "../reducer/reducer";
 
 //types
-import { ActionType } from '../reducer/reducer';
+import { ActionType } from "../reducer/reducer";
 
 export const useSendEmail = () => {
   const [state, dispatch] = useReducer<React.Reducer<State, Action>>(
@@ -34,11 +34,11 @@ export const useSendEmail = () => {
 
       send(service_id, template_id, template_param)
         .then(() => {
-          console.log('success to send email');
+          console.log("success to send email");
           dispatch({ type: ActionType.RESET, payload: state });
         })
         .catch((e) => {
-          console.log(e);
+          throw new Error(e.message);
         });
     }
   }, [state]);
@@ -56,18 +56,18 @@ export const useSendEmail = () => {
 
       const template_param = {
         to_name: state.name,
-        email: 'qcsmm7@gmail.com',
+        email: "qcsmm7@gmail.com",
         title: state.title,
         message: state.message,
       };
 
       send(service_id, template_id, template_param)
         .then(() => {
-          console.log('success to send email');
+          console.log("success to send email");
           dispatch({ type: ActionType.RESET, payload: state });
         })
         .catch((e) => {
-          console.log(e);
+          throw new Error(e.message);
         });
     }
   }, [state]);

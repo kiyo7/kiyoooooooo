@@ -1,9 +1,9 @@
 //lib
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 //function
-import { tab, sp } from '../../util/MediaQuery';
+import { tab, sp } from "../../util/MediaQuery";
 
 interface Props {
   to: string;
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const LinkTag: React.FC<Props> = (props) => {
-  const { to, children = '', title } = props;
+  const { to, children = "", title } = props;
 
   return (
     <SNavContent>
@@ -26,7 +26,7 @@ const SNavContent = styled.div`
   margin-left: 50px;
   font-size: 2rem;
   line-height: 100px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-style: italic;
   transition-property: transform;
   transition-duration: 0.3s;
