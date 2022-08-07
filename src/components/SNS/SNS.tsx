@@ -1,9 +1,6 @@
 //lib
 import styled from "styled-components";
 
-//function
-import { tab, sp } from "../../util/MediaQuery";
-
 //font-awesome
 import {
   faGithub,
@@ -12,39 +9,34 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Margin: React.FC = () => <div style={{ margin: "4%" }} />;
+const Margin: React.FC = () => <div style={{ margin: "8px" }} />;
 
 export const SNS: React.FC = () => {
   return (
-    <SDiv>
+    <div>
       <SSNSWrapper>
         <a href="https://github.com/kiyo7">
-          <SSNSIcon icon={faGithub} size="2x" title={"Githubに移動します"} />
+          <SSNSIcon icon={faGithub} size="3x" title={"Githubに移動します"} />
         </a>
         <Margin />
         <a href="https://gitlab.com/kiyo7">
-          <SSNSIcon icon={faGitlab} size="2x" title={"Gitlabに移動します"} />
+          <SSNSIcon icon={faGitlab} size="3x" title={"Gitlabに移動します"} />
         </a>
         <Margin />
         <a href="https://twitter.com/DwpVir">
-          <SSNSIcon icon={faTwitter} size="2x" title={"Twitterに移動します"} />
+          <SSNSIcon icon={faTwitter} size="3x" title={"Twitterに移動します"} />
         </a>
       </SSNSWrapper>
-    </SDiv>
+    </div>
   );
 };
 
-const SDiv = styled.div`
-  width: 30%;
-  margin: 0 auto;
-  text-align: center;
-  ${tab`width: 50%;`}
-`;
-
 const SSNSWrapper = styled.div`
-  margin: 0 30%;
+  width: 100%;
+  padding-top: 50px;
   display: flex;
-  ${tab`margin: 10%;`} ${sp`margin-bottom: 10% ;`};
+  align-items: center;
+  justify-content: center;
 `;
 
 const SSNSIcon = styled(FontAwesomeIcon)`

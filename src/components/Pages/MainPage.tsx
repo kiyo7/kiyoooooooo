@@ -1,28 +1,28 @@
 //lib
-import styled from 'styled-components';
-import React, { useCallback } from 'react';
+import styled from "styled-components";
+import React, { useCallback } from "react";
 
 //component
-import { AboutPage } from './AboutPage';
-import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
+import { AboutPage } from "./AboutPage";
+import { ScrollRevealContainer } from "../../util/ScrollRevealContainer";
 
 //function
-import { tab, sp } from '../../util/MediaQuery';
+import { tab, sp } from "../../util/MediaQuery";
 
 //animation
-import { FadeIn, Trans } from '../../util/animation';
+import { FadeIn, Trans } from "../../util/animation";
 
 //font-awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
 
 export const MainPage: React.FC = () => {
   const aboutPageRef: React.RefObject<HTMLDivElement> = React.createRef();
 
   const scrollBottom = useCallback(() => {
     aboutPageRef.current!.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
   }, [aboutPageRef]);
 
@@ -31,7 +31,9 @@ export const MainPage: React.FC = () => {
       <SWrapper>
         <ScrollRevealContainer move="left">
           <STitleWrapper>
-            <SWelcome>Welcome to</SWelcome>
+            <SWelcome>
+              Welcome <SSmall>to</SSmall>
+            </SWelcome>
             <br />
             <SMainTitle>
               <SSpan>Ki</SSpan>yo's
@@ -40,10 +42,10 @@ export const MainPage: React.FC = () => {
             </SMainTitle>
           </STitleWrapper>
         </ScrollRevealContainer>
-        <div style={{ textAlign: 'center', color: '#a09b9d' }}>
+        <div style={{ textAlign: "center", color: "#a09b9d" }}>
           <SFontAwesomeIcon
             icon={faChevronCircleDown}
-            size={'4x'}
+            size={"4x"}
             onClick={scrollBottom}
           />
         </div>
@@ -88,6 +90,11 @@ const SMainTitle = styled(SWelcome)`
   background-image: linear-gradient(-90deg, #a09b9d 0%, #515255 100%);
   ${tab`font-size: 19vw;`}
   ${sp`font-size: 19vw;`}
+`;
+
+const SSmall = styled.span`
+  font-size: 4vw;
+  ${tab`  font-size: 7vw;`}
 `;
 
 const SSpan = styled.span`

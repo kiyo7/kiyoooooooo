@@ -1,28 +1,24 @@
 //lib
-import styled from 'styled-components';
+import styled from "styled-components";
 
 //function
-import { tab, sp } from '../../util/MediaQuery';
+import { tab, sp } from "../../util/MediaQuery";
 
 //component
-import { Introduction } from '../Introduction/Introduction';
-import { ScrollRevealContainer } from '../../util/ScrollRevealContainer';
+import { Introduction } from "../Introduction/Introduction";
+import { ScrollRevealContainer } from "../../util/ScrollRevealContainer";
 
 //font-awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleUp, faCog } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 
 //image
-import ganmen from '../../images/ganmen.jpeg';
+import ganmen from "../../images/ganmen.jpeg";
 
 //animation
-import { RoupInf, FadeIn } from '../../util/animation';
+import { RoupInf } from "../../util/animation";
 
 export const AboutPage: React.FC = () => {
-  const scrollUp = () => {
-    window.scroll({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <>
       <SAboutPage>
@@ -48,13 +44,6 @@ export const AboutPage: React.FC = () => {
             <Introduction />
           </SAside>
         </SAboutWrapper>
-        <div style={{ textAlign: 'center', color: '#a09b9d' }}>
-          <SScrollIcon
-            icon={faChevronCircleUp}
-            size={'4x'}
-            onClick={scrollUp}
-          />
-        </div>
       </SAboutPage>
     </>
   );
@@ -78,7 +67,7 @@ const STitle = styled.h1`
   font-size: 3.5rem;
   color: #898a8a;
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 
   ${tab`font-size: 4rem;`}
   ${sp`font-size: 2rem; margin-top: 3rem;`}
@@ -112,15 +101,4 @@ const SMyImage = styled.img`
 const SAside = styled.aside`
   width: 56%;
   ${tab`width: 80%;`}
-`;
-
-const SScrollIcon = styled(FontAwesomeIcon)`
-  position: absolute;
-  top: 90%;
-  right: 3%;
-  animation: ${FadeIn} 1s infinite;
-  &:hover {
-    cursor: pointer;
-    opacity: 0.5;
-  }
 `;
